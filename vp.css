@@ -31,7 +31,7 @@ button, input { font: inherit; }
 strong { font-weight: 650; }
 
 /* ---------- top ---------- */
-.top { position: absolute; inset: 0 0 auto 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; }
+.top { position: absolute; inset: 0 0 auto 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; padding: 18px 150px 18px 24px; }
 .top a { color: var(--ivory); font: 600 13px/1 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; opacity: 0.8; }
 .top a:hover { opacity: 1; }
 
@@ -241,3 +241,9 @@ a.inline.light { color: var(--ivory); }
   .calc-grid, .myth { grid-template-columns: 1fr; }
   .idea { grid-template-columns: 38px 1fr; }
 }
+
+/* language switcher (all entry pages) */
+.langs { position: fixed; top: 12px; right: 12px; z-index: 50; display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(11, 11, 12, 0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.langs a { padding: 6px 10px; border-radius: 999px; font: 600 12px/1 var(--mono, ui-monospace, Menlo, monospace); letter-spacing: 0.06em; color: #f6f1e4; text-decoration: none; opacity: 0.75; }
+.langs a:hover { opacity: 1; }
+.langs a[aria-current="page"] { background: #f6f1e4; color: #0b0b0c; opacity: 1; }

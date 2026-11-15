@@ -17,6 +17,11 @@ window.DEEP = {
       'That is why central banks try to keep inflation low and steady, usually around 2% per year in countries that manage it. They do not aim for zero: a small, predictable inflation is considered healthy. The problem is when it takes off. In Argentina, inflation in 2023 was over 200%. In Zimbabwe, in 2008, prices were doubling roughly every day.',
       'The key idea for everything that follows is the difference between <strong>nominal</strong> and <strong>real</strong> returns. If your money earns 8% in a year but inflation was 10%, the number grew but your buying power fell by about 2%. In the long run the only thing that matters is the real return: what you earn after inflation is taken out.',
     ],
+    pt: [
+      'Por que os preços sobem? A explicação mais simples: quando tem mais dinheiro circulando do que coisas para comprar, cada nota vale menos. Se um governo imprime dinheiro mais rápido do que cresce o que o país produz, os preços sobem. Também acontece quando algo que todo mundo usa fica mais caro de repente (o petróleo, por exemplo) e esse custo se espalha para todo o resto.',
+      'Por isso os bancos centrais tentam manter a inflação baixa e estável, em geral perto de 2% ao ano nos países que conseguem. Eles não miram no zero: uma inflação pequena e previsível é considerada saudável. O problema é quando ela dispara. Na Argentina, a inflação de 2023 passou de 200%. No Zimbábue, em 2008, os preços chegaram a dobrar mais ou menos a cada dia.',
+      'A ideia-chave para tudo o que vem depois é a diferença entre rendimento <strong>nominal</strong> e <strong>real</strong>. Se o seu dinheiro rende 8% em um ano, mas a inflação foi de 10%, o número cresceu, mas o seu poder de compra caiu cerca de 2%. No longo prazo, a única coisa que importa é o rendimento real: o que você ganha depois de descontar a inflação.',
+    ],
   },
   colchon: {
     es: [
@@ -31,6 +36,12 @@ window.DEEP = {
       'Where do you keep the cushion? Somewhere that meets three conditions: it does not lose value suddenly, you can take it out in a day or two and, if possible, it beats inflation a little. A high-yield savings account, a short certificate of deposit or a money market fund usually qualify. Stocks do not: right when a crisis hits and you lose your job is exactly when they are most likely to be down. So the order is: expensive debt first, cushion second, investing last.',
       'What if 3 to 6 months is not enough? If your income is unstable, you work for yourself or you live in a country where crises come back to back, aim higher: 6 months to start and, over time, 1 or 2 years. You do not have to wait until you have it all to start investing: once you reach 6 months, you can split what you save between the cushion and investing.',
     ],
+    pt: [
+      'Por que uma dívida cara é tão perigosa? Porque os juros compostos, os mesmos que na lição 4 você vai ver fazendo o seu dinheiro crescer, também podem jogar contra você. Uma dívida que você não paga cresce em cima dela mesma: os juros deste mês geram juros no mês que vem.',
+      'Um exemplo com números: se você deve R$ 10.000 a uma taxa efetiva de 80% ao ano e não paga nada, depois de um ano você deve R$ 18.000. Se você paga só o mínimo do cartão, a dívida pode levar anos para diminuir, porque quase tudo o que você paga vai para os juros e muito pouco para reduzir o que você deve.',
+      'Onde guardar a reserva? Em algo que cumpra três condições: que não perca valor de repente, que você consiga sacar em um ou dois dias e, se der, que ganhe um pouco da inflação. Uma conta remunerada, um CDB com liquidez diária, o Tesouro Selic ou um fundo DI costumam cumprir. Ações não: justamente quando vem uma crise e você perde o emprego é quando é mais provável que elas estejam em baixa. A ordem fica assim: dívidas caras primeiro, reserva depois, investimento por último.',
+      'E se 3 a 6 meses não forem suficientes? Se a sua renda é instável, você trabalha por conta própria ou mora em um país com uma crise atrás da outra, vale mirar mais alto: 6 meses para começar e, com o tempo, 1 ou 2 anos. Você não precisa esperar ter tudo isso para começar a investir: ao chegar aos 6 meses, pode dividir o que economiza entre a reserva e o investimento.',
+    ],
   },
   ahorrar: {
     es: [
@@ -42,6 +53,11 @@ window.DEEP = {
       'Why is saving so hard? Because the brain values something it can have today much more than something it will have in the future, even when the future reward is bigger. Psychologists call it <strong>present bias</strong>. It is not a lack of willpower, it is how we are wired. That is why the tricks that work do not depend on willpower: they take the decision out of the way.',
       'Automation works so well that it has been studied closely. In a famous US study, when a company started enrolling new employees in its retirement savings plan automatically (and anyone who did not want it had to opt out), participation went from about 4 in 10 to almost 9 in 10. Same people, same money. The only thing that changed was what happened if they did nothing.',
       'Another tool: measure spending in hours of work. If you earn $20 an hour, a pair of $150 sneakers is 7.5 hours, almost a full workday. The point is not to never spend, but to spend on what you really care about and cut what you do not without it hurting.',
+    ],
+    pt: [
+      'Por que é tão difícil poupar? Porque o cérebro dá muito mais valor a algo que pode ter hoje do que a algo que vai ter no futuro, mesmo quando o prêmio futuro é maior. Os psicólogos chamam isso de <strong>viés do presente</strong>. Não é falta de força de vontade, é como a gente é feito. Por isso os truques que funcionam não dependem de força de vontade: eles tiram a decisão do caminho.',
+      'A automação funciona tão bem que foi estudada a fundo. Em um estudo famoso nos Estados Unidos, quando uma empresa passou a inscrever automaticamente os funcionários novos no plano de poupança para a aposentadoria (e quem não quisesse tinha que pedir para sair), a participação foi de cerca de 4 em cada 10 para quase 9 em cada 10. Mesmas pessoas, mesmo dinheiro. A única coisa que mudou foi o que acontecia se elas não fizessem nada.',
+      'Outra ferramenta: medir os gastos em horas de trabalho. Se você ganha R$ 25 por hora, um tênis de R$ 750 são 30 horas, quase uma semana inteira. A ideia não é nunca gastar, e sim gastar no que de verdade importa para você e cortar sem dor o que não importa.',
     ],
   },
   'interes-compuesto': {
@@ -55,6 +71,11 @@ window.DEEP = {
       'Compound interest has a dark side worth understanding: <strong>fees</strong> compound too. Paying a 2% yearly fee instead of 0.2% looks like a small difference. But if you save $100 a month for 30 years at a 7% return before fees, that difference eats more than a quarter of what you would have built.',
       'A warning: the 7% in these examples is a long-run average, not what happens every year. There are years of +25% and years of -30%. Compound interest works over decades, not months. If you look at a single year, it can seem like it is not working.',
     ],
+    pt: [
+      'A melhor forma de ver o poder do tempo é comparar duas pessoas. Ana guarda R$ 100 por mês dos 20 aos 30 anos e depois não coloca mais nada: no total, ela coloca R$ 12.000. Bruno começa aos 30 e coloca R$ 100 por mês até os 65: no total, ele coloca R$ 42.000. Com 7% ao ano, aos 65 Ana tem uns R$ 182.600 e Bruno uns R$ 171.100. Ana colocou menos de um terço e terminou com mais. Os dez anos de vantagem fizeram todo o trabalho.',
+      'Os juros compostos têm um lado sombrio que vale a pena entender: as <strong>taxas</strong> também se compõem. Pagar 2% ao ano de taxa em vez de 0,2% parece pouca diferença. Mas se você guarda R$ 100 por mês durante 30 anos com um rendimento de 7% antes das taxas, essa diferença come mais de um quarto do que você teria juntado.',
+      'Um aviso: os 7% dos exemplos são uma média de longo prazo, não o que acontece todo ano. Tem anos de +25% e anos de -30%. Os juros compostos funcionam ao longo de décadas, não de meses. Se você olhar um ano só, pode parecer que não funcionam.',
+    ],
   },
   acciones: {
     es: [
@@ -66,6 +87,11 @@ window.DEEP = {
       'What sets a stock\'s price? At bottom, what people believe the company will earn in the future. If a company makes more money year after year, its stock tends to rise over time. But day to day, the price moves on expectations, news and the market\'s mood, which is why it can rise or fall a lot without anything about the company changing.',
       'A simple way to tell if something is expensive is the <strong>P/E</strong> (price to earnings): how many years of current earnings you are paying for. If a stock costs $100 and the company earns $5 per share per year, the P/E is 20: you are paying for 20 years of earnings. A high P/E is not wrong in itself, it means the market expects the company to grow a lot. If that growth does not show up, the price can drop hard.',
       'The most surprising fact: most individual stocks, over their whole lifetime, earn less than an almost risk-free savings option. A 2018 study found that in the US a very small group of companies, about 4%, accounts for all the wealth the stock market created since 1926. Picking the winning stock is very hard, and that is why lesson 7 shows you an alternative.',
+    ],
+    pt: [
+      'O que determina o preço de uma ação? No fundo, o que as pessoas acreditam que a empresa vai lucrar no futuro. Se uma empresa ganha cada vez mais dinheiro ano após ano, a ação dela tende a subir com o tempo. Mas no dia a dia o preço se move por expectativas, notícias e o humor do mercado, e é por isso que ele pode subir ou cair muito sem que nada tenha mudado na empresa.',
+      'Um jeito simples de ver se algo está caro é o <strong>P/L</strong> (preço sobre lucro): quantos anos de lucro atual você está pagando. Se uma ação custa R$ 100 e a empresa lucra R$ 5 por ação por ano, o P/L é 20: você está pagando 20 anos de lucro. Um P/L alto não quer dizer que esteja errado, e sim que o mercado espera que a empresa cresça muito. Se esse crescimento não vier, o preço pode cair forte.',
+      'O dado que mais surpreende: a maioria das ações individuais, ao longo de toda a vida delas, rende menos do que uma aplicação quase sem risco. Um estudo de 2018 descobriu que, nos Estados Unidos, um grupo bem pequeno de empresas, cerca de 4%, explica toda a riqueza que a bolsa gerou desde 1926. Escolher a ação vencedora é muito difícil, e por isso na lição 7 você vai ver uma alternativa.',
     ],
   },
   bonos: {
@@ -79,6 +105,11 @@ window.DEEP = {
       'The longer the bond (the more years until you get your money back), the stronger that effect. In 2022, when rates rose very fast, US government bonds with 20 or more years left lost over 30% of their value. That is why, for money you might need soon, short bonds make more sense.',
       'If you hold the bond to the end and the borrower pays, you get exactly what was promised, no matter what happened to the price along the way. Rating agencies grade borrowers, from AAA (safest) on down. Low-rated bonds are called <strong>high-yield</strong>, or in the slang, junk bonds: they pay more because they are more likely not to pay.',
     ],
+    pt: [
+      'Os títulos têm uma regra que confunde todo mundo no começo: <strong>quando as taxas de juros sobem, o preço dos títulos que já existem cai</strong>. Por quê? Imagine que você comprou um título que paga 3% ao ano. No mês seguinte saem títulos novos pagando 5%. Ninguém vai querer o seu título de 3% pelo mesmo preço, então, se quiser vender, você vai ter que vender mais barato.',
+      'Quanto mais longo o título (quanto mais anos faltam para devolverem o seu dinheiro), mais forte é esse efeito. Em 2022, quando as taxas subiram muito rápido, os títulos do governo dos Estados Unidos com 20 anos ou mais perderam mais de 30% do valor. Por isso, para dinheiro que você pode precisar logo, faz mais sentido usar títulos curtos.',
+      'Se você fica com o título até o fim e o emissor paga, você recebe exatamente o que foi prometido, não importa o que tenha acontecido com o preço no meio do caminho. As agências de classificação de risco dão notas aos emissores, de AAA (o mais seguro) para baixo. Os títulos com nota baixa se chamam de <strong>alto rendimento</strong>, ou, na gíria, títulos podres: pagam mais porque é mais provável que não paguem.',
+    ],
   },
   'fondos-indexados': {
     es: [
@@ -90,6 +121,11 @@ window.DEEP = {
       'The underlying reason is almost math. All investors together are the market, so on average, before fees, they earn exactly what the market earns. After fees, the average investor trying to beat the market has to earn less than it. The index fund locks in the average and takes almost nothing off the top.',
       'The data backs it up. S&P publishes a yearly report called SPIVA that measures exactly this, and over 15-year periods about 9 out of 10 US large-company stock-picking funds earn less than their index. It is not that professionals are bad: they compete against other professionals who are just as good, and they charge fees on top.',
       'How to pick one: look at three things. Which index it follows (the broader, the more diversified), how much it charges per year (called the <strong>expense ratio</strong>, look for around 0.2% or less) and that a large, regulated firm runs it. In some countries you buy them directly; in others, through local products that copy them.',
+    ],
+    pt: [
+      'A razão de fundo é quase matemática. Todos os investidores juntos são o mercado, então, na média, antes das taxas, eles ganham o mesmo que o mercado. Depois das taxas, o investidor médio que tenta bater o mercado tem que ganhar menos que ele. O fundo de índice garante a média e tira quase nada dela.',
+      'Os dados confirmam. A S&P publica todo ano um relatório chamado SPIVA que mede exatamente isso, e em períodos de 15 anos cerca de 9 em cada 10 fundos que escolhem ações de empresas grandes nos Estados Unidos rendem menos que o seu índice. Não é que os profissionais sejam ruins: é que eles competem contra outros profissionais tão bons quanto eles, e ainda cobram por isso.',
+      'Como escolher um: olhe três coisas. Qual índice ele segue (quanto mais amplo, mais diversificado), quanto cobra por ano (é a <strong>taxa de administração</strong>, procure algo perto de 0,2% ou menos) e se quem administra é uma instituição grande e regulada. Em alguns países você compra direto. Em outros, por meio de produtos locais que os replicam.',
     ],
   },
   diversificar: {
@@ -103,6 +139,11 @@ window.DEEP = {
       'That has a consequence that sounds like magic: by combining investments that do not move together, risk drops more than the expected return does. That is why diversification is called the only free lunch in investing: it is one of the few things that gives you something without asking for anything back.',
       'Two important limits. First, in the worst crises many things that normally do not move together fall at the same time, because everyone sells to raise cash. Diversifying does not save you from every drop: it saves you from one company or one bad decision ruining you. Second, you do not diversify by buying things you do not understand.',
     ],
+    pt: [
+      'A palavra técnica é <strong>correlação</strong>: com que frequência dois investimentos se movem juntos. Se duas coisas sobem e caem ao mesmo tempo, juntar as duas não protege você. Se uma tende a aguentar quando a outra cai, combinar as duas faz o total se mexer muito menos do que cada uma separada.',
+      'Isso tem uma consequência que parece mágica: ao combinar investimentos que não se movem juntos, o risco cai mais do que cai o rendimento esperado. Por isso a diversificação é chamada de único almoço grátis dos investimentos: é uma das poucas coisas que dão algo a você sem pedir nada em troca.',
+      'Dois limites importantes. Primeiro, nas piores crises muitas coisas que normalmente não se movem juntas caem ao mesmo tempo, porque todo mundo vende para conseguir dinheiro vivo. Diversificar não salva você de todas as quedas: salva você de uma única empresa ou uma única decisão ruim acabar com tudo. Segundo, não se diversifica comprando coisas que você não entende.',
+    ],
   },
   portafolio: {
     es: [
@@ -114,6 +155,11 @@ window.DEEP = {
       'Why does the split matter more than picking stocks? Because most of how much a portfolio rises and falls over the years is explained by how much it holds in stocks, bonds and cash, not by which specific stocks it picked. Two people with 80% in stocks will live through very similar years, even if they bought different funds.',
       'A rebalance with numbers: you start with $10,000, 70% in stocks ($7,000) and 30% in bonds ($3,000). Stocks rise 30% and bonds stay flat: now you have $9,100 in stocks and $3,000 in bonds, about 75/25. To get back to 70/30 on $12,100, you sell about $630 of stocks and buy bonds. You sold something that went up and bought something that stayed cheap, without guessing anything.',
       'An old rule to get started: hold a percentage in bonds close to your age and the rest in stocks (at 20, 20% bonds and 80% stocks). Many people now see it as too cautious because we live longer, but it works as a starting point for thinking. What never works is changing the split every time the market\'s mood changes.',
+    ],
+    pt: [
+      'Por que a divisão importa mais do que escolher ações? Porque a maior parte de quanto uma carteira sobe e cai ao longo dos anos é explicada por quanto ela tem em ações, títulos e dinheiro, e não por quais ações específicas ela escolheu. Duas pessoas com 80% em ações vão viver anos muito parecidos, mesmo que tenham comprado fundos diferentes.',
+      'Um rebalanceamento com números: você começa com R$ 10.000, 70% em ações (R$ 7.000) e 30% em títulos (R$ 3.000). As ações sobem 30% e os títulos ficam iguais: agora você tem R$ 9.100 em ações e R$ 3.000 em títulos, uns 75/25. Para voltar a 70/30 sobre R$ 12.100, você vende uns R$ 630 de ações e compra títulos. Você vendeu algo que subiu e comprou algo que ficou barato, sem precisar adivinhar nada.',
+      'Uma regra antiga para começar: ter em títulos uma porcentagem parecida com a sua idade e o resto em ações (aos 20, 20% em títulos e 80% em ações). Hoje muita gente acha essa regra cautelosa demais porque vivemos mais anos, mas ela serve como ponto de partida para pensar. O que nunca serve é mudar a divisão toda vez que muda o humor do mercado.',
     ],
   },
   emociones: {
@@ -127,6 +173,11 @@ window.DEEP = {
       'The cost can be measured. Morningstar studies compare what a fund earns with what the people investing in that same fund earn on average. People usually earn less than the fund they bought, because they get in after the rises and get out after the drops. The gap is around 1 percentage point a year or more, and with compound interest that turns into a lot of money.',
       'Another trap: checking too often. If you look at your portfolio every day, you will see losses almost half the time, even if it rises over the long run. If you look once a year, most of the time you will see gains. Same portfolio, different experience. Looking less is not laziness: it is a strategy.',
     ],
+    pt: [
+      'A armadilha mais forte se chama <strong>aversão à perda</strong>: perder R$ 100 dói mais ou menos o dobro do que alegra ganhar R$ 100. Por isso uma queda de 20% parece uma catástrofe, mesmo que no ano anterior você tenha ganhado 30%. Daniel Kahneman e Amos Tversky, os psicólogos que estudaram isso, mostraram que acontece com quase todo mundo, e Kahneman ganhou um Nobel em parte por isso.',
+      'O custo pode ser medido. Os estudos da Morningstar comparam o que um fundo rende com o que ganham, em média, as pessoas que investem nesse mesmo fundo. As pessoas costumam ganhar menos do que o fundo que compraram, porque entram depois das altas e saem depois das quedas. A diferença fica em torno de 1 ponto por ano ou mais, e com os juros compostos isso vira muito dinheiro.',
+      'Outra armadilha: olhar demais. Se você confere a sua carteira todo dia, vai ver perdas quase metade das vezes, mesmo que ela suba no longo prazo. Se você olha uma vez por ano, na maioria das vezes vai ver ganhos. Mesma carteira, outra experiência. Olhar menos não é preguiça: é uma estratégia.',
+    ],
   },
   edad: {
     es: [
@@ -139,6 +190,11 @@ window.DEEP = {
       'That is why many plans lower the share of stocks as the time to use the money gets closer. Target-date funds do exactly this: they start with lots of stocks and, year after year, shift toward bonds and cash. That way a big drop right before you need the money does not catch you with everything at risk.',
       'And it is not only about age: your job matters too. If your paycheck is very stable, you can take a bit more risk with your investments. If your income depends heavily on one industry or one company, it is smart for your investments not to depend on the same thing, so a bad stretch does not hit you twice.',
     ],
+    pt: [
+      'Um dado mostra por que o tempo reduz o risco: na história da bolsa dos Estados Unidos, as ações caíram mais ou menos 1 a cada 4 anos. Mas em períodos de 20 anos seguidos, contando os dividendos, elas nunca terminaram no prejuízo. O passado não garante o futuro, mas mostra o padrão: o risco de um ano é alto, o de duas décadas é bem menor.',
+      'Por isso muitos planos vão diminuindo as ações conforme se aproxima o momento de usar o dinheiro. É o que fazem os fundos com data-alvo: começam com muitas ações e, ano após ano, vão passando para títulos e dinheiro. Assim, uma queda forte logo antes de usar o dinheiro não pega você com tudo em risco.',
+      'E não se trata só da idade: o seu trabalho também importa. Se o seu salário é bem estável, você pode correr um pouco mais de risco com os seus investimentos. Se a sua renda depende muito de como vai uma indústria ou uma empresa, é bom que os seus investimentos não dependam da mesma coisa, para que uma fase ruim não atinja você duas vezes.',
+    ],
   },
   'primer-paso': {
     es: [
@@ -150,6 +206,11 @@ window.DEEP = {
       'Before opening the account, write your plan on one page. Three lines are enough: what this money is for and when you will use it, what percentage goes to stocks and bonds, and how much you will invest each month. That page is what you will reread the day the market gets ugly.',
       'What to check with any broker: that it is registered with your country\'s regulator, how much it charges to trade and to keep the account, and whether the funds you want are available. Small fees matter: as you saw with compound interest, they add up over decades.',
       'And the most common scam signal, so you always recognize it: someone who promises high, fast and safe returns, rushes you to decide right now and asks you to bring friends to earn more. If you see two of those together, walk away. Real investing is boring, and it is fine that it is.',
+    ],
+    pt: [
+      'Antes de abrir a conta, escreva o seu plano em uma folha. Três linhas bastam: para que é esse dinheiro e quando você vai usá-lo, que porcentagem vai para ações e para títulos, e quanto você vai investir por mês. Esse papel é o que você vai reler no dia em que o mercado ficar feio.',
+      'O que conferir em qualquer corretora: se ela é registrada no órgão regulador do seu país, quanto cobra para operar e para manter a conta, e se os fundos que interessam a você estão disponíveis. Taxas pequenas importam: como você viu com os juros compostos, elas se acumulam durante décadas.',
+      'E o sinal de golpe mais comum, para você reconhecer sempre: alguém que promete ganhos altos, rápidos e seguros, apressa você para decidir agora e pede que você traga amigos para ganhar mais. Se você vir duas dessas coisas juntas, caia fora. Investimentos de verdade são chatos, e tudo bem que sejam.',
     ],
   },
 };

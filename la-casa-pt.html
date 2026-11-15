@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+<title>A casa sempre ganha</title>
+<link rel="stylesheet" href="la-casa.css">
+</head>
+<body>
+<nav class="langs" aria-label="Idioma"><a href="la-casa.html" hreflang="es" lang="es">ES</a><a href="la-casa-en.html" hreflang="en" lang="en">EN</a><a href="la-casa-pt.html" hreflang="pt-BR" lang="pt-BR" aria-current="page">PT</a></nav>
+
+<!-- 1. EL CASINO: the costume. Deliberately plain when you win: no lights, no sound, net loss always visible. -->
+<section class="casino" id="casino">
+  <p class="honest">Simulação. Fichas de mentira, matemática de verdade.</p>
+  <h1 class="marquee">Topa o desafio?<span>100 fichas grátis</span></h1>
+
+  <div class="slot" role="group" aria-label="Caça-níquel de mentira">
+    <div class="meters">
+      <div><span>Fichas</span><strong id="chips">100</strong></div>
+      <div><span>Resultado</span><strong id="net">0</strong></div>
+    </div>
+    <div class="reels" aria-live="polite" aria-atomic="true">
+      <div class="reel" id="reel0">7</div>
+      <div class="reel" id="reel1">★</div>
+      <div class="reel" id="reel2">◆</div>
+    </div>
+    <p class="slot-msg" id="slot-msg">Cada rodada custa 5 fichas. Você tem 20.</p>
+    <div class="slot-actions">
+      <button type="button" class="spin" id="spin">Girar <small>5 fichas</small></button>
+      <button type="button" class="spin ghost" id="spin1000">Girar 10.000 vezes</button>
+    </div>
+    <p class="spins-left"><span id="spins-left">20</span> rodadas</p>
+  </div>
+
+  <button type="button" class="skip" id="skip">Ver a conta sem jogar ↓</button>
+  <div class="blackout" id="blackout" aria-hidden="true"></div>
+</section>
+
+<!-- 2. LA REVELACIÓN -->
+<section class="day reveal-panel" id="reveal" hidden>
+  <div class="wrap">
+    <p class="kicker">A luz acendeu</p>
+    <h2 class="big">Não era sorte. Era a conta.</h2>
+    <p class="lead" id="reveal-body"></p>
+    <div class="facts">
+      <div><span class="fact-label">Você colocou na máquina</span><strong id="reveal-in"></strong></div>
+      <div><span class="fact-label">Ela devolveu</span><strong id="reveal-out"></strong></div>
+      <div><span class="fact-label">A máquina ficou com</span><strong id="reveal-kept"></strong></div>
+    </div>
+    <p class="body">Esta máquina é feita para devolver, em média, 92 de cada 100 fichas que você coloca. As outras 8 ficam com ela. Sempre. Por um tempo você pode estar ganhando, mas quanto mais vezes você joga, mais a conta aparece.</p>
+    <p class="think"><span class="fact-label">Pensa nisso um segundo</span>Quando você ganhou alguma coisa, ou chegou pertinho, deu vontade de girar só mais uma? Essa vontadezinha não é por acaso. É exatamente o que eles querem.</p>
+    <a class="next" href="#ruleta">Agora, o truque com uma roleta ↓</a>
+  </div>
+</section>
+
+<!-- 3. LA RULETA -->
+<section class="day" id="ruleta">
+  <div class="wrap">
+    <p class="kicker">A conta que não te mostram</p>
+    <h2 class="big">A casa não tem sorte. Tem matemática.</h2>
+    <p class="lead">Uma roleta tem 37 números: 18 vermelhos, 18 pretos e um verde, o 0. Se você aposta no vermelho e sai vermelho, te pagam o dobro, como se fosse meio a meio. Mas não é meio a meio.</p>
+    <div class="strip" id="strip" aria-hidden="true"></div>
+    <div class="row">
+      <button type="button" class="btn" id="roll">Apostei no vermelho: girar</button>
+      <p class="roll-msg" id="roll-msg" aria-live="polite"></p>
+    </div>
+    <p class="body">Quando sai o 0, todo mundo perde. Esse zerinho é o salário do cassino: faz com que, em média, ele fique com <strong>2,7% de tudo o que é apostado</strong>. Numa rodada você nem percebe. Em mil rodadas, é a única coisa que importa. Nos caça-níqueis online e nos aplicativos de apostas esportivas, a parte que fica com a casa costuma ser ainda maior.</p>
+  </div>
+</section>
+
+<!-- 4. EL SIMULADOR -->
+<section class="day alt" id="simulador">
+  <div class="wrap">
+    <p class="kicker">100 jovens, a mesma roleta</p>
+    <h2 class="big">No começo, vários ganham. São esses que contam vantagem no grupo.</h2>
+    <p class="lead">Cada ponto é alguém que aposta uma ficha no vermelho, de novo e de novo. Laranja: está ganhando. Cinza: está perdendo. Toque nos botões em ordem e veja o que acontece com o tempo.</p>
+    <div class="sim-controls">
+      <button type="button" class="btn sim-btn" data-n="10">10 apostas</button>
+      <button type="button" class="btn sim-btn" data-n="100">100</button>
+      <button type="button" class="btn sim-btn" data-n="1000">1.000</button>
+      <button type="button" class="btn sim-btn" data-n="10000">10.000</button>
+    </div>
+    <div class="sim-board">
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <div class="sim-readout" aria-live="polite">
+        <span class="fact-label">Estão ganhando</span>
+        <strong id="sim-ahead">?</strong>
+        <span class="fact-label" id="sim-after">Escolha um botão</span>
+      </div>
+    </div>
+    <p class="body">O que a matemática exata diz para 100 jovens: depois de 10 apostas, uns 34 estão ganhando. Depois de 1.000, uns 19. Depois de 10.000, <strong>nenhum ou quase nenhum</strong>. Não é azar de quem perde nem talento de quem ganha: o zerinho joga em todas as rodadas, e o tempo faz ele aparecer. O problema é que ninguém aposta só 10 vezes. As pessoas apostam todo dia.</p>
+  </div>
+</section>
+
+<!-- 5. FÚTBOL: predict, then reveal (illusion of control through knowledge) -->
+<section class="day" id="futbol">
+  <div class="wrap">
+    <p class="kicker">Apostas esportivas</p>
+    <h2 class="big">Entender de futebol não basta.</h2>
+    <p class="lead">Jogo de mentira: Gaviões contra Onças. Os Gaviões são os favoritos. Quem ganha? Escolha.</p>
+    <div class="odds" id="odds">
+      <button type="button" class="odd" data-pick="0"><span>Gaviões</span><strong>2,00</strong></button>
+      <button type="button" class="odd" data-pick="1"><span>Empate</span><strong>4,00</strong></button>
+      <button type="button" class="odd" data-pick="2"><span>Onças</span><strong>3,00</strong></button>
+    </div>
+    <div class="odds-reveal" id="odds-reveal" hidden>
+      <p class="body" id="odds-pick"></p>
+      <p class="body">Agora olha o que esses números escondem. Cada odd diz o quanto a casa acha provável cada resultado: é 1 dividido pela odd. 1 ÷ 2,00 é 50%, 1 ÷ 4,00 é 25% e 1 ÷ 3,00 é 33%. Some tudo.</p>
+      <div class="sum" aria-label="As probabilidades somam 108%">
+        <i class="s-a" style="width:46.1%"></i><i class="s-b" style="width:23.1%"></i><i class="s-c" style="width:30.8%"></i>
+        <b class="sum-mark" style="left:92.3%"><span>100%</span></b>
+      </div>
+      <p class="sum-label"><strong>50% + 25% + 33% = 108%.</strong> Na vida real, os três resultados juntos somam 100%: algum deles tem que acontecer. Esses 8% a mais são a parte da casa, escondida dentro das odds.</p>
+      <p class="body">Por isso, mesmo que você entenda muito e acerte bastante, no longo prazo você perde: te pagam como se cada resultado fosse mais provável do que é. Um estudo com apostadores que entendiam muito de hóquei mostrou que eles escolhiam os vencedores melhor do que no chute, mas não ganhavam mais dinheiro. As odds já incluem o que você sabe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CÓMO TE ENGANCHAN -->
+<section class="day alt" id="trampas">
+  <div class="wrap wide">
+    <p class="kicker">Como eles te fisgam</p>
+    <h2 class="big">Não é que você seja fraco. É feito assim de propósito.</h2>
+    <p class="lead">Toque em cada carta para ver o que tem atrás.</p>
+    <div class="cards">
+      <button type="button" class="flip" aria-pressed="false"><span class="front">BÔNUS x2!<small>Ganhe $10.000 para começar</small></span><span class="back">Para sacar esse dinheiro, primeiro você tem que apostar ele muitas vezes. Não é presente. É a isca para você começar.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">QUASE!<small>7 · 7 · ★</small></span><span class="back">Para a máquina, "quase" não existe: você perdeu do mesmo jeito. Mas o seu cérebro sente como se estivesse perto e pede mais uma. Muitas máquinas e aplicativos mostram "quase" o tempo todo justamente por isso.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">Olha o que eu ganhei<small>story de um influencer</small></span><span class="back">Ele mostra a que deu certo. As que perdeu, ele não posta. E muitas vezes estão pagando ele para te mostrar o aplicativo.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">Só mais uma e eu recupero<small>o que quase todo mundo que perde pensa</small></span><span class="back">Querer recuperar o que perdeu é a armadilha mais perigosa: é assim que se perde mais. O que foi perdido já foi.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">Pacote surpresa<small>será que vem a carta top?</small></span><span class="back">Você paga sem saber o que vai vir. É a mesma mecânica de um caça-níquel, só que escondida dentro do seu jogo.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">Usa a conta de um amigo mais velho<small>ou de alguém que coloca crédito pra você</small></span><span class="back">No Brasil, apostar é só para maiores de 18 anos. Se um aplicativo ou uma pessoa deixa você apostar com 12, está fazendo uma coisa ilegal com você.</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ¿TIENE MECÁNICA DE APUESTA? -->
+<section class="day" id="detector">
+  <div class="wrap">
+    <p class="kicker">Detector de armadilhas</p>
+    <h2 class="big">Tem mecânica de aposta?</h2>
+    <p class="lead">A regra é simples. Uma coisa tem mecânica de aposta se junta estes três ingredientes: <strong>você coloca algo que vale</strong> (dinheiro, fichas, moedas do jogo), <strong>o resultado é sorte</strong> e <strong>tem um prêmio</strong>.</p>
+    <div class="quiz" id="quiz">
+      <p class="quiz-count" id="quiz-count">1 / 10</p>
+      <div class="quiz-card" id="quiz-card" aria-live="polite"></div>
+      <div class="quiz-actions" id="quiz-actions">
+        <button type="button" class="btn yes" id="ans-yes">← Sim, tem</button>
+        <button type="button" class="btn no" id="ans-no">Não tem →</button>
+      </div>
+      <div class="quiz-feedback" id="quiz-feedback" aria-live="polite"></div>
+      <button type="button" class="btn next-q" id="next-q" hidden>Próxima</button>
+      <p class="quiz-hint">Você também pode deslizar a carta ou usar as setas do teclado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. TU OTRO FUTURO -->
+<section class="day alt" id="futuro">
+  <div class="wrap">
+    <p class="kicker">O seu outro futuro</p>
+    <h2 class="big">O mesmo dinheiro, do outro lado da mesa.</h2>
+    <p class="lead">Quanto você poderia deixar de gastar por semana com pacotes, recargas ou apostas? Mexa na barra.</p>
+    <div class="future">
+      <label class="future-input" for="weekly">
+        <span>Por semana</span>
+        <strong id="weekly-val">$2.000</strong>
+      </label>
+      <input type="range" id="weekly" min="0" max="20000" step="500" value="2000">
+      <div class="bars">
+        <div class="bar-row"><span>Aos 18</span><div class="bar"><i id="bar18"></i></div><strong id="v18"></strong></div>
+        <div class="bar-row"><span>Aos 25</span><div class="bar"><i id="bar25"></i></div><strong id="v25"></strong></div>
+        <div class="bar-row"><span>Aos 40</span><div class="bar"><i id="bar40"></i></div><strong id="v40"></strong></div>
+      </div>
+      <p class="fine">Começando aos 12. Calculado em <strong>dinheiro de hoje</strong> (já descontada a inflação), supondo que você guarde em algo que renda 4% por ano acima da inflação. É um exemplo para entender a ideia, não uma promessa. Para investir de verdade, você vai precisar de um adulto.</p>
+    </div>
+    <p class="body">A diferença não é que um caminho seja chato e o outro divertido. É que num deles a matemática joga contra você em cada rodada, e no outro, com tempo, ela joga a seu favor.</p>
+  </div>
+</section>
+
+<!-- 9. SI TE PASA: friend case first; every risk message comes with an action -->
+<section class="day" id="ayuda">
+  <div class="wrap">
+    <p class="kicker">Se acontecer com um amigo, ou com você</p>
+    <h2 class="big">Pedir ajuda não é perder. É a jogada mais inteligente.</h2>
+    <div class="signs">
+      <p class="fact-label">Sinais de que algo não está bem</p>
+      <ul>
+        <li>Pensa (ou você pensa) em apostar quase o tempo todo.</li>
+        <li>Aposta para recuperar o que perdeu.</li>
+        <li>Mente sobre dinheiro ou pede emprestado para jogar.</li>
+        <li>Fica de mau humor se não pode jogar.</li>
+      </ul>
+    </div>
+    <p class="body"><strong>Se for um amigo:</strong> não dê bronca nem tire sarro. Diga que você se importa com ele e ajude ele a contar para um adulto de confiança. <strong>Se for você:</strong> conte para alguém da sua família, para um professor ou para a orientação da escola. Se não souber como começar, copie isto:</p>
+    <div class="script">
+      <p id="script-text">Quero te contar uma coisa que é difícil pra mim: eu estou apostando (ou um amigo está apostando) e não sei como parar. Você me ajuda?</p>
+      <button type="button" class="btn" id="copy">Copiar</button>
+      <span class="copied" id="copied" aria-live="polite"></span>
+    </div>
+    <div class="help">
+      <div class="help-main">
+        <p class="fact-label">No Brasil</p>
+        <p><strong>CVV, 188</strong>: grátis, 24 horas, para conversar com alguém quando você não estiver bem. Em emergência: <strong>192</strong> (SAMU) ou <strong>190</strong> (polícia).</p>
+      </div>
+      <div>
+        <p class="fact-label">Em toda a Argentina</p>
+        <p><strong>141</strong>, Sedronar: grátis, confidencial, 24 horas.<br><strong>Linha 102</strong>.<br>Chatbot <strong>TINA</strong> no WhatsApp: <strong>11 3910-1010</strong>.</p>
+      </div>
+      <div>
+        <p class="fact-label">Cidade de Buenos Aires</p>
+        <p><strong>0800-666-6006</strong>, grátis, de segunda a sexta, das 9h às 17h.<br>Boti no WhatsApp: <strong>11 5050-0147</strong>, escrevendo "ludopatía" (vício em jogo).</p>
+      </div>
+      <div>
+        <p class="fact-label">Província de Buenos Aires</p>
+        <p><strong>0800-444-4000</strong>, grátis. Programa de Prevenção e Assistência ao Jogo Compulsivo.</p>
+      </div>
+    </div>
+    <p class="fine">Se for uma emergência na Argentina: <strong>911</strong>.</p>
+  </div>
+</section>
+
+<!-- 10. CIERRE -->
+<section class="end" id="cierre">
+  <div class="wrap">
+    <h2 class="end-title">A casa sempre ganha.<br><span>Você pode não jogar.</span></h2>
+    <a class="end-link" href="index.html?lang=pt">Quer aprender a fazer seu dinheiro crescer de verdade? →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>Simulação educativa: as fichas são de mentira, aqui ninguém aposta nem usa dinheiro. Os números da roleta, do simulador e das odds são matemática real. Linhas de ajuda verificadas em sites oficiais do Governo nacional da Argentina (argentina.gob.ar), da Cidade e da Província de Buenos Aires, em novembro de 2026. Se algum número mudou, avise a gente.</p>
+</footer>
+
+<script src="la-casa.js"></script>
+</body>
+</html>

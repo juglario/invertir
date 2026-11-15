@@ -4,6 +4,10 @@
   'use strict';
 
   var LS_LANG = 'idc.lang';
+  var LANGS = ['es', 'en', 'pt'];
+  var LANG_NAMES = { es: 'Español', en: 'English', pt: 'Português' };
+  // Entry pages exist as page.html (es), page-en.html, page-pt.html.
+  function pageFor(name) { return name + (lang === 'es' ? '' : '-' + lang) + '.html'; }
   var LS_DONE = 'idc.done';
   var ROMAN = { 1: 'I', 2: 'II', 3: 'III' };
 
@@ -24,11 +28,20 @@
 
   // ---------- storage (localStorage can throw in private mode / file://) ----------
 
+  // ?lang= in the URL (links from the other pages) wins, then the saved choice,
+  // then the browser language. Only the three known codes are accepted.
   function readLang() {
+    var param = null;
+    try { param = new URLSearchParams(window.location.search).get('lang'); } catch (e) { /* ignore */ }
+    if (LANGS.indexOf(param) !== -1) {
+      try { localStorage.setItem(LS_LANG, param); } catch (e) { /* ignore */ }
+      return param;
+    }
     var saved = null;
     try { saved = localStorage.getItem(LS_LANG); } catch (e) { /* ignore */ }
-    if (saved === 'es' || saved === 'en') return saved;
+    if (LANGS.indexOf(saved) !== -1) return saved;
     var nav = (navigator.language || 'es').toLowerCase();
+    if (nav.indexOf('pt') === 0) return 'pt';
     return nav.indexOf('en') === 0 ? 'en' : 'es';
   }
   function saveLang() { try { localStorage.setItem(LS_LANG, lang); } catch (e) { /* ignore */ } }
@@ -47,7 +60,8 @@
 
   // ---------- helpers ----------
 
-  function t(key) { return window.UI[lang][key]; }
+  function t(key) { var v = window.UI[lang] && window.UI[lang][key]; return v !== undefined ? v : window.UI.es[key]; }
+  function L(obj) { return obj[lang] || obj.es; }
 
   function el(tag, cls, html) {
     var node = document.createElement(tag);
@@ -63,21 +77,22 @@
     return node;
   }
 
-  function locale() { return lang === 'es' ? 'es-AR' : 'en-US'; }
-  function money(n) { return '$' + Math.round(n).toLocaleString(locale()); }
+  function locale() { return { es: 'es-AR', en: 'en-US', pt: 'pt-BR' }[lang]; }
+  // Portuguese lessons are written in reais (R$); es/en use a generic $.
+  function money(n) { return (lang === 'pt' ? 'R$ ' : '$') + Math.round(n).toLocaleString(locale()); }
   function pct(n) { return n.toLocaleString(locale(), { maximumFractionDigits: 1 }) + '%'; }
   function pad2(n) { return n < 10 ? '0' + n : String(n); }
   function fill(str, vals) { return str.replace(/\{(\w+)\}/g, function (_, k) { return vals[k]; }); }
   // Lesson prose = core body (content.js) + depth layer (deep.js), read as one.
   function paragraphs(lesson) {
     var deep = (window.DEEP && window.DEEP[lesson.id] && window.DEEP[lesson.id][lang]) || [];
-    return lesson[lang].body.concat(deep);
+    return L(lesson).body.concat(deep);
   }
 
   var WPM = 220;
   function words(str) { return str.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length; }
   function lessonWords(lesson) {
-    var c = lesson[lang];
+    var c = L(lesson);
     return words([c.title, c.oneLine, c.analogy].concat(paragraphs(lesson)).join(' '));
   }
   function minutes(w) { return Math.max(1, Math.round(w / WPM)); }
@@ -93,10 +108,10 @@
   function render() {
     disconnectObservers();
     quizState = {};
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
     document.title = t('siteTitle');
     document.getElementById('brand').textContent = t('siteTitle');
-    document.getElementById('lang-toggle').textContent = t('langToggle');
+    paintLangSwitch();
     document.getElementById('rail-title').textContent = t('indexTitle');
     document.getElementById('disclaimer').textContent = t('disclaimer');
 
@@ -148,9 +163,9 @@
     var entries = el('nav', 'entries');
     entries.setAttribute('aria-label', t('entriesLabel'));
     entries.appendChild(el('span', 'entries-label', t('entriesLabel')));
-    [['empezar.html', 'entryEmpezar'], ['la-casa.html', 'entryKids'], ['futbolistas.html', 'entryFutbol'], ['creadores.html', 'entryCreadores'], ['de-golpe.html', 'entryGolpe'], ['academia.html', 'entryAcademia']].forEach(function (e) {
+    [['empezar', 'entryEmpezar'], ['la-casa', 'entryKids'], ['futbolistas', 'entryFutbol'], ['creadores', 'entryCreadores'], ['de-golpe', 'entryGolpe'], ['academia', 'entryAcademia']].forEach(function (e) {
       var a = el('a', 'entry');
-      a.href = e[0];
+      a.href = pageFor(e[0]);
       a.textContent = t(e[1]);
       entries.appendChild(a);
     });
@@ -201,15 +216,15 @@
     inner.appendChild(el('span', 'part-num', ROMAN[part.id]));
     var box = el('div');
     box.appendChild(el('p', 'eyebrow', t('part') + ' ' + ROMAN[part.id]));
-    box.appendChild(el('h2', 'part-title', part[lang].title));
-    box.appendChild(el('p', 'part-desc', part[lang].desc));
+    box.appendChild(el('h2', 'part-title', L(part).title));
+    box.appendChild(el('p', 'part-desc', L(part).desc));
     inner.appendChild(box);
     sec.appendChild(inner);
     return sec;
   }
 
   function buildLesson(lesson, idx) {
-    var c = lesson[lang];
+    var c = L(lesson);
     var sec = el('section', 'lesson');
     sec.id = lesson.id;
 
@@ -276,7 +291,7 @@
       a.href = '#' + lesson.id;
       a.appendChild(el('span', 'rail-num', pad2(i + 1)));
       var label = el('span', 'rail-label');
-      label.textContent = lesson[lang].title;
+      label.textContent = L(lesson).title;
       a.appendChild(label);
       li.appendChild(a);
       railList.appendChild(li);
@@ -306,7 +321,7 @@
     window.LESSONS.forEach(function (l, i) { if (l.id === id) idx = i; });
     if (idx === -1) { nowLabel.classList.remove('show'); return; }
     railLinks[id].classList.add('is-active');
-    nowLabel.textContent = pad2(idx + 1) + ' / ' + pad2(window.LESSONS.length) + ' · ' + window.LESSONS[idx][lang].title;
+    nowLabel.textContent = pad2(idx + 1) + ' / ' + pad2(window.LESSONS.length) + ' · ' + L(window.LESSONS[idx]).title;
     nowLabel.classList.add('show');
   }
 
@@ -380,7 +395,7 @@
     var box = el('section', 'quiz reveal');
     box.appendChild(el('h3', 'quiz-title', t('quiz')));
     quizState[lesson.id] = {};
-    lesson[lang].quiz.forEach(function (item, qi) { box.appendChild(buildQuestion(lesson, item, qi)); });
+    L(lesson).quiz.forEach(function (item, qi) { box.appendChild(buildQuestion(lesson, item, qi)); });
     return box;
   }
 
@@ -411,7 +426,7 @@
           feedback.appendChild(again);
         }
         quizState[lesson.id][qi] = right;
-        var all = lesson[lang].quiz.every(function (_, k) { return quizState[lesson.id][k] === true; });
+        var all = L(lesson).quiz.every(function (_, k) { return quizState[lesson.id][k] === true; });
         if (all) {
           markDone(lesson.id);
           if (railLinks[lesson.id]) railLinks[lesson.id].classList.add('is-done');
@@ -431,7 +446,8 @@
   function chapterLabel(ch) {
     var title = window.CHAPTERS[ch];
     var name = ch === 'epilogo' ? t('bookEpilogue') : t('bookChapter') + ' ' + ch;
-    return lang === 'en' ? name + ' ("' + title.es + '", ' + title.en + ')' : name + ' ("' + title.es + '")';
+    var gloss = lang === 'es' ? null : (title[lang] || title.en);
+    return gloss ? name + ' ("' + title.es + '", ' + gloss + ')' : name + ' ("' + title.es + '")';
   }
 
   function buildBookRef(lesson) {
@@ -460,7 +476,7 @@
     var p = el('p', 'book guide');
     p.appendChild(document.createTextNode('→ ' + t('guideLead') + ' '));
     var a = el('a');
-    a.href = 'empezar.html#' + encodeURIComponent(lesson.guide);
+    a.href = pageFor('empezar') + '#' + encodeURIComponent(lesson.guide);
     a.textContent = t('guideName');
     p.appendChild(a);
     p.appendChild(document.createTextNode('.'));
@@ -744,12 +760,25 @@
     return s.box;
   }
 
-  // ---------- boot ----------
+  function paintLangSwitch() {
+    var box = document.getElementById('lang-switch');
+    box.setAttribute('aria-label', t('langLabel') || 'Idioma');
+    Array.prototype.forEach.call(box.querySelectorAll('button[data-lang]'), function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+  }
 
-  document.getElementById('lang-toggle').addEventListener('click', function () {
+  function setLang(next) {
+    if (LANGS.indexOf(next) === -1 || next === lang) return;
     var keep = activeId;
-    lang = lang === 'es' ? 'en' : 'es';
+    lang = next;
     saveLang();
+    // Keep the URL shareable in the chosen language (fails quietly on file://).
+    try {
+      var url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState(null, '', url.toString());
+    } catch (e) { /* ignore */ }
     render();
     // Stay on the lesson you were reading instead of jumping to the top.
     if (keep) {
@@ -757,7 +786,23 @@
       if (node && node.scrollIntoView) node.scrollIntoView({ block: 'start' });
       setActive(keep);
     }
-  });
+  }
+
+  // ---------- boot ----------
+
+  (function buildLangSwitch() {
+    var box = document.getElementById('lang-switch');
+    LANGS.forEach(function (code) {
+      var b = el('button', 'lang');
+      b.type = 'button';
+      b.setAttribute('data-lang', code);
+      b.setAttribute('lang', code === 'pt' ? 'pt-BR' : code);
+      b.setAttribute('title', LANG_NAMES[code]);
+      b.textContent = code.toUpperCase();
+      b.addEventListener('click', function () { setLang(code); });
+      box.appendChild(b);
+    });
+  })();
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
