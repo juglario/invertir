@@ -15,6 +15,8 @@ window.UI = {
     heroCaption: 'Ahorrá $100 por mes durante 30 años al 7%: ponés {put} y terminás con {end}. Lo que sigue explica por qué.',
     scrollCue: 'Empezá a leer',
     entriesLabel: 'Otras puertas de entrada:',
+    guideLead: 'Con tus números:',
+    guideName: 'la guía Empezar',
     entryEmpezar: 'Cobro un sueldo y quiero empezar',
     entryKids: 'Tengo 12 años',
     entryFutbol: 'Soy futbolista',
@@ -102,6 +104,8 @@ window.UI = {
     heroCaption: 'Save $100 a month for 30 years at 7%: you put in {put} and end up with {end}. Everything below explains why.',
     scrollCue: 'Start reading',
     entriesLabel: 'Other entry points (in Spanish):',
+    guideLead: 'With your own numbers:',
+    guideName: 'the Empezar guide (in Spanish)',
     entryEmpezar: 'I get a paycheck and want to start',
     entryKids: "I'm 12",
     entryFutbol: "I'm a football player",
@@ -221,6 +225,7 @@ window.CHAPTERS = {
 window.LESSONS = [
   {
     id: 'inflacion',
+    guide: 'meta',
     part: 1,
     chapters: [1],
     tool: 'inflation',
@@ -275,6 +280,7 @@ window.LESSONS = [
   },
   {
     id: 'colchon',
+    guide: 'colchon',
     part: 1,
     chapters: [2],
     tool: 'emergency',
@@ -329,6 +335,7 @@ window.LESSONS = [
   },
   {
     id: 'ahorrar',
+    guide: 'primero',
     part: 1,
     chapters: ['epilogo'],
     tool: null,
@@ -383,6 +390,7 @@ window.LESSONS = [
   },
   {
     id: 'interes-compuesto',
+    guide: 'calculadora',
     part: 2,
     chapters: [3],
     tool: 'compound',
@@ -493,6 +501,7 @@ window.LESSONS = [
   },
   {
     id: 'bonos',
+    guide: 'instrumentos',
     part: 2,
     chapters: [5],
     tool: null,
@@ -547,6 +556,7 @@ window.LESSONS = [
   },
   {
     id: 'fondos-indexados',
+    guide: 'indices',
     part: 2,
     chapters: [6],
     tool: null,
@@ -657,6 +667,7 @@ window.LESSONS = [
   },
   {
     id: 'portafolio',
+    guide: 'portafolios',
     part: 3,
     chapters: [9],
     tool: 'portfolio',
@@ -767,6 +778,7 @@ window.LESSONS = [
   },
   {
     id: 'edad',
+    guide: 'objetivos',
     part: 3,
     chapters: [11],
     tool: null,
@@ -821,6 +833,7 @@ window.LESSONS = [
   },
   {
     id: 'primer-paso',
+    guide: 'plan',
     part: 3,
     chapters: [12, 'epilogo'],
     tool: null,

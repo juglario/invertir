@@ -90,16 +90,37 @@
     return Infinity;
   }
 
-  // The memo's plan: save pct of salary, fill the cushion first, then invest toward
-  // 20 years of spending. Cushion months are whole months; investing uses yearsToReach.
+  // The memo's plan, month by month: the saved slice fills the cushion first,
+  // then goes to the investment fund, compounding monthly at the equivalent of
+  // the yearly real rate. Reports milestones (5/10/20 years from today), the
+  // age the goal (20 years of spending) is reached and how much of it the
+  // market put in. Never loops more than 100 years.
   function memoPlan(o) {
-    var perMonth = o.salary * o.pct / 100;
+    var per = o.salary * o.pct / 100;
     var cushion = o.spend * o.months, goal = o.spend * 12 * 20;
-    var cushionMonths = o.saved >= cushion ? 0 : perMonth > 0 ? Math.ceil((cushion - o.saved) / perMonth) : null;
-    var start = Math.max(0, o.saved - cushion);
-    var goalYears = perMonth > 0 || start >= goal ? yearsToReach(goal, start, perMonth * 12, o.r) : null;
-    var total = cushionMonths === null || goalYears === null ? null : Math.round(cushionMonths / 12 + goalYears);
-    return { perMonth: perMonth, left: o.salary - perMonth, cushion: cushion, goal: goal, cushionMonths: cushionMonths, goalYears: goalYears, total: total };
+    var rm = Math.pow(1 + o.r, 1 / 12) - 1;
+    var cush = Math.min(o.saved, cushion), inv = Math.max(0, o.saved - cushion), put = inv;
+    var cushionMonth = cush >= cushion ? 0 : null, goalMonth = inv >= goal && cushionMonth === 0 ? 0 : null;
+    var goalPut = put, goalBal = inv, at = {}, to65 = Math.max(0, Math.round((65 - o.age) * 12)), at65 = to65 === 0 ? inv : null;
+    for (var m = 1; m <= 1200 && (goalMonth === null || m <= 240 || m <= to65); m++) {
+      var rest = per;
+      if (cush < cushion) {
+        var add = Math.min(per, cushion - cush);
+        cush += add; rest -= add;
+        if (cush >= cushion && cushionMonth === null) cushionMonth = m;
+      }
+      inv = inv * (1 + rm) + rest; put += rest;
+      if (m === 60 || m === 120 || m === 240) at[m / 12] = inv;
+      if (m === to65) at65 = inv;
+      if (goalMonth === null && inv >= goal) { goalMonth = m; goalPut = put; goalBal = inv; }
+    }
+    return {
+      perMonth: per, left: o.salary - per, cushion: cushion, goal: goal,
+      cushionMonth: cushionMonth, milestones: at, at65: at65,
+      goalMonth: goalMonth,
+      goalAge: goalMonth === null ? null : o.age + goalMonth / 12,
+      marketShare: goalMonth === null || goalBal <= 0 ? 0 : Math.max(0, (goalBal - goalPut) / goalBal),
+    };
   }
 
   window.VP = { sustainableSpend: sustainableSpend, path: path, salaryRun: salaryRun, yearsToReach: yearsToReach, windfallYears: windfallYears, memoPlan: memoPlan, CREATOR_PATTERN: CREATOR_PATTERN };
@@ -303,31 +324,80 @@
   }
 
   function memoCalc(node, d) {
-    var s = shell(node, d.title || 'Tu plan, con tus números', d.desc || 'Todo en dólares de hoy. Primero se llena el colchón, después arranca el fondo de inversión.');
+    var s = shell(node, d.title || 'Tu plan, con tus números', d.desc || 'Todo en dólares de hoy. Primero se llena el colchón y después arranca el fondo de inversión.');
+    var cAge = control('Tu edad', { min: 16, max: 70, step: 1, value: d.age || 25 });
     var cSalary = moneyControl('Tu sueldo neto por mes', d.salary || 1500);
-    var cPct = control('Qué porcentaje separás el día que cobrás', { min: 0, max: 50, step: 1, value: d.pct || 20 });
+    var cPct = control('Qué porcentaje separás el día que cobrás', { min: 0, max: 50, step: 1, value: d.pct != null ? d.pct : 20 });
     var cSpend = moneyControl('Lo que gastás por mes', d.spend || 1000);
     var cMonths = control('Meses de gastos en el colchón', { min: 3, max: 24, step: 1, value: d.months || 6 });
     var cSaved = moneyControl('Lo que ya tenés ahorrado', d.saved || 0);
-    var cR = control('Rendimiento por año, por encima de la inflación (%)', { min: 0, max: 7, step: 0.5, value: d.r || 4 });
-    var ctls = [cSalary, cPct, cSpend, cMonths, cSaved, cR];
+    var cR = control('Rendimiento por año, por encima de la inflación (%)', { min: 0, max: 7, step: 0.5, value: d.r || 5 });
+    var ctls = [cAge, cSalary, cPct, cSpend, cMonths, cSaved, cR];
     ctls.forEach(function (c) { s.left.appendChild(c.wrap); });
     var oPer = out('Separás por mes');
-    var oLeft = out('Te queda para vivir');
     var oCush = out('Tu colchón');
-    var oGoal = out('Tu meta: 20 años de gastos');
-    var oTot = out('Llegás a la meta en', true);
-    [oPer, oLeft, oCush, oGoal, oTot].forEach(function (o) { s.right.appendChild(o.box); });
-    node.appendChild(el('p', 'fine', 'Supuestos: el sueldo y los gastos no cambian y todo está en plata de hoy. El fondo de inversión rinde lo que elijas por encima de la inflación (un índice de acciones de Estados Unidos rindió más que eso en el último siglo, pero el pasado no garantiza nada). Si te aumentan el sueldo y subís el porcentaje, llegás antes.'));
+    var oSteps = out('Lo que vas construyendo');
+    var steps = el('ul', 'steps');
+    oSteps.box.appendChild(steps);
+    var oGoal = out('Llegás a tu meta (20 años de gastos)', true);
+    var oLever = out('La palanca');
+    [oPer, oCush, oSteps, oGoal, oLever].forEach(function (o) { s.right.appendChild(o.box); });
+    node.appendChild(el('p', 'fine', 'Supuestos: sueldo y gastos fijos, todo en plata de hoy. El colchón no rinde y el fondo de inversión rinde lo que elijas por encima de la inflación: arranca en 5%, un poco por debajo del ~7% que usan las lecciones para acciones (el promedio histórico de EE.UU. descontando la inflación), para ser prudentes y porque un portafolio con algo de bonos rinde menos. El pasado no garantiza nada. No cuenta aumentos de sueldo ni jubilación del Estado: los dos te acercan antes.'));
+    function yearsWord(n) { return n === 1 ? '1 año' : n + ' años'; }
+    function covered(bal, spend) {
+      var months = spend > 0 ? bal / spend : 0;
+      if (months < 12) return Math.floor(months) + (Math.floor(months) === 1 ? ' mes' : ' meses') + ' de gastos';
+      var y = Math.floor(months / 12 * 10) / 10;
+      return String(y).replace('.', ',') + (y === 1 ? ' año' : ' años') + ' de gastos';
+    }
     wire(ctls, function () {
-      var p = memoPlan({ salary: cSalary.get(), pct: cPct.get(), spend: cSpend.get(), months: cMonths.get(), saved: cSaved.get(), r: cR.get() / 100 });
-      oPer.val.textContent = money(p.perMonth);
-      oLeft.val.textContent = money(p.left) + (p.left < cSpend.get() ? ': no te alcanza para tus gastos' : '');
-      oLeft.val.className = 'out-v ' + (p.left < cSpend.get() ? 'bad' : '');
-      oCush.val.textContent = money(p.cushion) + (p.cushionMonths === 0 ? ', ya lo tenés' : p.cushionMonths === null ? '' : ', en ' + p.cushionMonths + (p.cushionMonths === 1 ? ' mes' : ' meses'));
-      oGoal.val.textContent = money(p.goal);
-      oTot.val.textContent = p.total === null ? 'más de 100 años: separá más o gastá menos' : p.total === 0 ? 'ya llegaste' : 'unos ' + p.total + (p.total === 1 ? ' año' : ' años');
-      oTot.val.className = 'out-v ' + (p.total === null ? 'bad' : '');
+      var age = Math.round(cAge.get()), spend = cSpend.get(), pctNow = Math.round(cPct.get());
+      var o = { age: age, salary: cSalary.get(), pct: pctNow, spend: spend, months: Math.round(cMonths.get()), saved: cSaved.get(), r: cR.get() / 100 };
+      var p = memoPlan(o);
+      var short = p.left < spend;
+      oPer.val.textContent = money(p.perMonth) + (short ? ' (y no te alcanza para tus gastos)' : '');
+      oPer.val.className = 'out-v ' + (short ? 'bad' : '');
+      oCush.val.textContent = p.cushionMonth === 0 ? money(p.cushion) + ', ya lo tenés' : p.cushionMonth === null ? money(p.cushion) : money(p.cushion) + ' en ' + p.cushionMonth + (p.cushionMonth === 1 ? ' mes' : ' meses');
+      steps.innerHTML = '';
+      [5, 10, 20].forEach(function (y) {
+        var li = el('li');
+        li.appendChild(el('b', null, 'En ' + y + ' años'));
+        li.appendChild(document.createTextNode(p.milestones[y] > 0 ? money(p.milestones[y]) + ' invertidos, ' + covered(p.milestones[y], spend) : p.perMonth > 0 ? 'todavía llenando el colchón' : 'sin ahorro todavía'));
+        steps.appendChild(li);
+      });
+      // A goal past 75 is not a useful answer: show what is there at 65 instead,
+      // and the savings rate that would reach the goal by 65.
+      var late = p.goalMonth === null || p.goalAge > 75;
+      var need = null;
+      if (p.goalMonth !== 0 && (late || p.goalAge > 65) && o.age < 65) {
+        for (var q = pctNow + 1; q <= 50; q++) {
+          var alt = memoPlan({ age: o.age, salary: o.salary, pct: q, spend: o.spend, months: o.months, saved: o.saved, r: o.r });
+          if (alt.goalMonth !== null && alt.goalAge <= 65) { need = q; break; }
+        }
+      }
+      if (p.goalMonth === 0) {
+        oGoal.label.textContent = 'Tu meta: ' + money(p.goal) + ' (20 años de gastos)';
+        oGoal.val.textContent = 'ya llegaste';
+      } else if (late && o.age < 65 && p.perMonth > 0) {
+        oGoal.label.textContent = 'A los 65 tendrías invertidos';
+        oGoal.val.textContent = money(p.at65 || 0);
+      } else if (p.perMonth <= 0) {
+        oGoal.label.textContent = 'Tu meta: ' + money(p.goal) + ' (20 años de gastos)';
+        oGoal.val.textContent = 'empezá con 5%: lo importante es el hábito';
+      } else {
+        oGoal.label.textContent = 'Llegás a tu meta: ' + money(p.goal) + ' (20 años de gastos)';
+        oGoal.val.textContent = 'a los ' + Math.round(p.goalAge) + ' años';
+      }
+      var parts = [];
+      if (late && o.age < 65 && p.perMonth > 0) parts.push('Eso cubre ' + covered(p.at65 || 0, spend) + ', sumado a la jubilación que tengas.');
+      else if (!late && p.goalMonth > 0 && p.marketShare > 0) parts.push('El mercado pone ' + Math.round(p.marketShare * 100) + '% de tu meta.');
+      if (need !== null) parts.push('Para llegar a la meta completa a los 65, separá ' + need + '%.');
+      else if (!late && p.goalMonth > 0 && pctNow + 5 <= 50) {
+        var alt5 = memoPlan({ age: o.age, salary: o.salary, pct: pctNow + 5, spend: o.spend, months: o.months, saved: o.saved, r: o.r });
+        if (alt5.goalMonth > 0) parts.push('Con ' + (pctNow + 5) + '%, llegás a los ' + Math.round(alt5.goalAge) + '.');
+      } else if (late && p.perMonth > 0) parts.push('Cada punto que subas el porcentaje, sobre todo cuando te aumenten el sueldo, te acerca.');
+      oLever.val.textContent = p.goalMonth === 0 ? 'Ya cubriste la meta: lo que sigas sumando es margen.' : parts.join(' ') || 'Separar más es lo que más acerca la meta.';
+      oLever.val.className = 'out-v small';
     });
   }
 

@@ -242,6 +242,7 @@
     var col2 = el('div', 'col');
     col2.appendChild(buildQuiz(lesson));
     col2.appendChild(buildBookRef(lesson));
+    if (lesson.guide) col2.appendChild(buildGuideRef(lesson));
     sec.appendChild(col2);
     return sec;
   }
@@ -450,6 +451,18 @@
     }
     title.textContent = t('bookTitle');
     p.appendChild(title);
+    p.appendChild(document.createTextNode('.'));
+    return p;
+  }
+
+  // Link to the matching section of the practical guide (empezar.html).
+  function buildGuideRef(lesson) {
+    var p = el('p', 'book guide');
+    p.appendChild(document.createTextNode('→ ' + t('guideLead') + ' '));
+    var a = el('a');
+    a.href = 'empezar.html#' + encodeURIComponent(lesson.guide);
+    a.textContent = t('guideName');
+    p.appendChild(a);
     p.appendChild(document.createTextNode('.'));
     return p;
   }
@@ -749,4 +762,10 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   render();
+  // Arriving from another page at index.html#<lesson>: the lessons are built by
+  // script, so jump to the target once it exists.
+  if (location.hash.length > 1) {
+    var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target && target.scrollIntoView) target.scrollIntoView({ block: 'start' });
+  }
 })();

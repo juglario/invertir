@@ -278,6 +278,8 @@ strong { font-weight: 650; }
 
 .book { margin-top: 40px; padding-top: 18px; border-top: 1px dashed var(--line); font: 400 14px/1.6 var(--mono); color: var(--muted); }
 .book em { font-style: italic; color: var(--ink); }
+.book.guide { margin-top: 8px; padding-top: 0; border-top: 0; }
+.book a { color: var(--ink); text-underline-offset: 3px; }
 
 /* ---------- end ---------- */
 

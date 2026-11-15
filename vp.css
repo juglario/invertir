@@ -191,6 +191,14 @@ strong { font-weight: 650; }
 .lvl.l3 { background: #f6e8c8; color: #8a5a00; }
 .lvl.l4 { background: #fbdccd; color: #a0401a; }
 .lvl.l5 { background: #f7d2ce; color: var(--bad); }
+.steps { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.steps li { font: 500 16px/1.4 var(--sans); color: var(--ivory); }
+.steps b { display: inline-block; min-width: 92px; font: 600 12.5px/1.4 var(--mono); color: var(--champagne); }
+.out-v.small { font: 500 17px/1.45 var(--sans); }
+.base { margin: -4px 0 20px; font: 500 13px/1.5 var(--mono); color: var(--muted); }
+.sec.dark .base { color: var(--muted-dark); }
+a.inline.light { color: var(--ivory); }
+.base a { color: inherit; text-decoration-color: var(--signal); text-underline-offset: 3px; }
 .myth.pair .no strong { text-decoration: none; }
 .sec:not(.dark) .myth.pair > div { background: #fff; border: 1.5px solid var(--line); }
 .sec:not(.dark) .myth.pair .yes { border-color: var(--ink); }
