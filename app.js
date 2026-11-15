@@ -148,7 +148,7 @@
     var entries = el('nav', 'entries');
     entries.setAttribute('aria-label', t('entriesLabel'));
     entries.appendChild(el('span', 'entries-label', t('entriesLabel')));
-    [['empezar.html', 'entryEmpezar'], ['la-casa.html', 'entryKids'], ['futbolistas.html', 'entryFutbol'], ['creadores.html', 'entryCreadores'], ['de-golpe.html', 'entryGolpe']].forEach(function (e) {
+    [['empezar.html', 'entryEmpezar'], ['la-casa.html', 'entryKids'], ['futbolistas.html', 'entryFutbol'], ['creadores.html', 'entryCreadores'], ['de-golpe.html', 'entryGolpe'], ['academia.html', 'entryAcademia']].forEach(function (e) {
       var a = el('a', 'entry');
       a.href = e[0];
       a.textContent = t(e[1]);
