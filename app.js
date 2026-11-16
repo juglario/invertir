@@ -111,6 +111,7 @@
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
     document.title = t('siteTitle');
     document.getElementById('brand').textContent = t('siteTitle');
+    document.getElementById('brand').href = pageFor('index');
     paintLangSwitch();
     document.getElementById('rail-title').textContent = t('indexTitle');
     document.getElementById('disclaimer').textContent = t('disclaimer');
