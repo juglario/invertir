@@ -61,9 +61,12 @@ a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-under
 .tools ul { list-style: none; margin: 0; padding: 0; }
 .tools li { padding: 9px 0; border-top: 1px dotted var(--hair); font-size: 16px; line-height: 1.35; }
 .tools li::before { content: "▸ "; color: var(--accent); }
-.toc-list { margin: 0 0 14px; padding-left: 1.6em; columns: 2 240px; column-gap: 28px; column-rule: 1px solid var(--hair); }
+.toc-list { margin: 0 0 14px; padding-left: 0; list-style: none; columns: 2 240px; column-gap: 28px; column-rule: 1px solid var(--hair); }
 .toc-list li { break-inside: avoid; margin: 0 0 7px; font-size: 16px; line-height: 1.35; }
-.toc-list.lectures { list-style: none; padding-left: 0; }
+/* Numbers are drawn inside each item: outside list markers get clipped in the second column. */
+ol.toc-list { counter-reset: n; }
+ol.toc-list li { counter-increment: n; position: relative; padding-left: 2em; }
+ol.toc-list li::before { content: counter(n) "."; position: absolute; left: 0; width: 1.6em; text-align: right; font: 700 14px/1.6 var(--sans); color: var(--accent); }
 .toc-list .lvl-head { margin-top: 10px; font: 700 11px/1.3 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .toc-list .lvl-head span { color: var(--accent); }
 .toc-list .lvl-head:first-child { margin-top: 0; }
