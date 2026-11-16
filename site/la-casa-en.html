@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+<title>The house always wins</title>
+<link rel="stylesheet" href="la-casa.css">
+</head>
+<body>
+<nav class="langs" aria-label="Language"><a href="la-casa.html" hreflang="es" lang="es">ES</a><a href="la-casa-en.html" hreflang="en" lang="en" aria-current="page">EN</a><a href="la-casa-pt.html" hreflang="pt-BR" lang="pt-BR">PT</a></nav>
+
+<!-- 1. EL CASINO: the costume. Deliberately plain when you win: no lights, no sound, net loss always visible. -->
+<section class="casino" id="casino">
+  <p class="honest">Simulation. Fake chips, real math.</p>
+  <h1 class="marquee">Feeling lucky?<span>100 free chips</span></h1>
+
+  <div class="slot" role="group" aria-label="Fake slot machine">
+    <div class="meters">
+      <div><span>Chips</span><strong id="chips">100</strong></div>
+      <div><span>Result</span><strong id="net">0</strong></div>
+    </div>
+    <div class="reels" aria-live="polite" aria-atomic="true">
+      <div class="reel" id="reel0">7</div>
+      <div class="reel" id="reel1">★</div>
+      <div class="reel" id="reel2">◆</div>
+    </div>
+    <p class="slot-msg" id="slot-msg">Each spin costs 5 chips. You have 20.</p>
+    <div class="slot-actions">
+      <button type="button" class="spin" id="spin">Spin <small>5 chips</small></button>
+      <button type="button" class="spin ghost" id="spin1000">Spin 10,000 times</button>
+    </div>
+    <p class="spins-left"><span id="spins-left">20</span> spins</p>
+  </div>
+
+  <button type="button" class="skip" id="skip">See the math without playing ↓</button>
+  <div class="blackout" id="blackout" aria-hidden="true"></div>
+</section>
+
+<!-- 2. LA REVELACIÓN -->
+<section class="day reveal-panel" id="reveal" hidden>
+  <div class="wrap">
+    <p class="kicker">The lights came on</p>
+    <h2 class="big">It wasn't luck. It was math.</h2>
+    <p class="lead" id="reveal-body"></p>
+    <div class="facts">
+      <div><span class="fact-label">You put into the machine</span><strong id="reveal-in"></strong></div>
+      <div><span class="fact-label">It gave back</span><strong id="reveal-out"></strong></div>
+      <div><span class="fact-label">The machine kept</span><strong id="reveal-kept"></strong></div>
+    </div>
+    <p class="body">This machine is built to give back, on average, 92 out of every 100 chips you put in. It keeps the other 8. Always. You can be ahead for a while, but the more times you play, the more the math shows up.</p>
+    <p class="think"><span class="fact-label">Think about it for a second</span>When you won something, or came really close, did you feel like spinning one more time? That little itch isn't an accident. It's exactly what they're going for.</p>
+    <a class="next" href="#ruleta">Now, the trick with a roulette wheel ↓</a>
+  </div>
+</section>
+
+<!-- 3. LA RULETA -->
+<section class="day" id="ruleta">
+  <div class="wrap">
+    <p class="kicker">The math they don't show you</p>
+    <h2 class="big">The house doesn't have luck. It has math.</h2>
+    <p class="lead">A roulette wheel has 37 numbers: 18 red, 18 black and one green, the 0. If you bet on red and red comes up, they pay you double, as if it were fifty-fifty. But it isn't fifty-fifty.</p>
+    <div class="strip" id="strip" aria-hidden="true"></div>
+    <div class="row">
+      <button type="button" class="btn" id="roll">I bet on red: spin</button>
+      <p class="roll-msg" id="roll-msg" aria-live="polite"></p>
+    </div>
+    <p class="body">When the 0 comes up, everybody loses. That little zero is the casino's paycheck. It means that, on average, the casino keeps <strong>2.7% of everything that gets bet</strong>. You won't notice it in one spin. In a thousand spins, it's the only thing that matters. In online slots and sports betting apps, the house's cut is usually even bigger.</p>
+  </div>
+</section>
+
+<!-- 4. EL SIMULADOR -->
+<section class="day alt" id="simulador">
+  <div class="wrap">
+    <p class="kicker">100 kids, the same roulette wheel</p>
+    <h2 class="big">At first, a bunch of them win. Those are the ones who brag in the group chat.</h2>
+    <p class="lead">Each dot is a kid who bets one chip on red, over and over. Orange: ahead. Gray: behind. Tap the buttons in order and watch what happens over time.</p>
+    <div class="sim-controls">
+      <button type="button" class="btn sim-btn" data-n="10">10 bets</button>
+      <button type="button" class="btn sim-btn" data-n="100">100</button>
+      <button type="button" class="btn sim-btn" data-n="1000">1,000</button>
+      <button type="button" class="btn sim-btn" data-n="10000">10,000</button>
+    </div>
+    <div class="sim-board">
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <div class="sim-readout" aria-live="polite">
+        <span class="fact-label">Ahead right now</span>
+        <strong id="sim-ahead">?</strong>
+        <span class="fact-label" id="sim-after">Pick a button</span>
+      </div>
+    </div>
+    <p class="body">Here's what the exact math says for 100 kids: after 10 bets, about 34 are ahead. After 1,000, about 19. After 10,000, <strong>none or almost none</strong>. It's not bad luck for the ones who lose or talent for the ones who win. The little zero plays in every single spin, and time makes it show up. The problem is that people don't bet just 10 times. They bet every day.</p>
+  </div>
+</section>
+
+<!-- 5. FÚTBOL: predict, then reveal (illusion of control through knowledge) -->
+<section class="day" id="futbol">
+  <div class="wrap">
+    <p class="kicker">Sports betting</p>
+    <h2 class="big">Knowing a lot about soccer isn't enough.</h2>
+    <p class="lead">Pretend game: the Hawks vs. the Pumas. The Hawks are the favorites. Who wins? Pick one.</p>
+    <div class="odds" id="odds">
+      <button type="button" class="odd" data-pick="0"><span>Hawks</span><strong>2.00</strong></button>
+      <button type="button" class="odd" data-pick="1"><span>Tie</span><strong>4.00</strong></button>
+      <button type="button" class="odd" data-pick="2"><span>Pumas</span><strong>3.00</strong></button>
+    </div>
+    <div class="odds-reveal" id="odds-reveal" hidden>
+      <p class="body" id="odds-pick"></p>
+      <p class="body">Now look at what those numbers are hiding. Each one (the "odds") tells you how likely the house thinks each result is: it's 1 divided by the odds. 1 ÷ 2.00 is 50%, 1 ÷ 4.00 is 25% and 1 ÷ 3.00 is 33%. Add them up.</p>
+      <div class="sum" aria-label="The chances add up to 108%">
+        <i class="s-a" style="width:46.1%"></i><i class="s-b" style="width:23.1%"></i><i class="s-c" style="width:30.8%"></i>
+        <b class="sum-mark" style="left:92.3%"><span>100%</span></b>
+      </div>
+      <p class="sum-label"><strong>50% + 25% + 33% = 108%.</strong> In real life, the three results together add up to 100%: one of them has to happen. That extra 8% is the house's cut, tucked inside the odds.</p>
+      <p class="body">That's why, even if you know a lot and guess right often, you lose in the long run: they pay you as if each result were more likely than it really is. A study of bettors who knew a lot about hockey found they picked winners better than chance, but they didn't win more money. The odds already include what you know.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CÓMO TE ENGANCHAN -->
+<section class="day alt" id="trampas">
+  <div class="wrap wide">
+    <p class="kicker">How they hook you</p>
+    <h2 class="big">It's not that you're weak. It's built this way.</h2>
+    <p class="lead">Tap each card to see what's on the back.</p>
+    <div class="cards">
+      <button type="button" class="flip" aria-pressed="false"><span class="front">2x BONUS!<small>Here's $10,000 on us to get started</small></span><span class="back">To cash out that money, you first have to bet it lots of times. It's not a gift. It's the bait to get you started.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">SO CLOSE!<small>7 · 7 · ★</small></span><span class="back">To the machine, "almost" doesn't exist: you lost anyway. But your brain feels it like being close and asks for another one. Lots of machines and apps show you "almost" a lot for exactly that reason.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">Look what I won<small>an influencer's story</small></span><span class="back">They show you the one that hit. The ones they lost never get posted. And a lot of the time, they're getting paid to show you the app.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">One more and I'll win it back<small>what almost everyone who loses thinks</small></span><span class="back">Wanting to win back what you lost is the most dangerous trap: that's how people lose even more. What's lost is already lost.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">Mystery pack<small>will you get the top card?</small></span><span class="back">You pay without knowing what you'll get. It's the same mechanic as a slot machine, just tucked inside your game.</span></button>
+      <button type="button" class="flip" aria-pressed="false"><span class="front">Use a grown-up friend's account<small>or someone who adds money to it for you</small></span><span class="back">In most countries gambling is for adults only (18 or older, sometimes 21). If an app or a person lets you bet at 12, they're doing something illegal to you.</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ¿TIENE MECÁNICA DE APUESTA? -->
+<section class="day" id="detector">
+  <div class="wrap">
+    <p class="kicker">Trap detector</p>
+    <h2 class="big">Does it work like a bet?</h2>
+    <p class="lead">The rule is simple. Something works like a bet if it has these three ingredients: <strong>you put in something of value</strong> (money, chips, in-game coins), <strong>the result is random</strong> and <strong>there's a prize</strong>.</p>
+    <div class="quiz" id="quiz">
+      <p class="quiz-count" id="quiz-count">1 / 10</p>
+      <div class="quiz-card" id="quiz-card" aria-live="polite"></div>
+      <div class="quiz-actions" id="quiz-actions">
+        <button type="button" class="btn yes" id="ans-yes">← Yes, it does</button>
+        <button type="button" class="btn no" id="ans-no">No, it doesn't →</button>
+      </div>
+      <div class="quiz-feedback" id="quiz-feedback" aria-live="polite"></div>
+      <button type="button" class="btn next-q" id="next-q" hidden>Next</button>
+      <p class="quiz-hint">You can also swipe the card or use the arrow keys.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. TU OTRO FUTURO -->
+<section class="day alt" id="futuro">
+  <div class="wrap">
+    <p class="kicker">Your other future</p>
+    <h2 class="big">The same money, on the other side of the table.</h2>
+    <p class="lead">How much could you skip spending each week on packs, top-ups or bets? Move the slider.</p>
+    <div class="future">
+      <label class="future-input" for="weekly">
+        <span>Per week</span>
+        <strong id="weekly-val">$2,000</strong>
+      </label>
+      <input type="range" id="weekly" min="0" max="20000" step="500" value="2000">
+      <div class="bars">
+        <div class="bar-row"><span>At 18</span><div class="bar"><i id="bar18"></i></div><strong id="v18"></strong></div>
+        <div class="bar-row"><span>At 25</span><div class="bar"><i id="bar25"></i></div><strong id="v25"></strong></div>
+        <div class="bar-row"><span>At 40</span><div class="bar"><i id="bar40"></i></div><strong id="v40"></strong></div>
+      </div>
+      <p class="fine">Starting at 12. Calculated in <strong>today's money</strong> (inflation already taken out), assuming you keep it in something that beats inflation by 4% a year. It's an example to help you get the idea, not a promise. To invest for real, you'll need an adult.</p>
+    </div>
+    <p class="body">The difference isn't that one path is boring and the other is fun. It's that on one, the math plays against you on every spin, and on the other, given time, it plays for you.</p>
+  </div>
+</section>
+
+<!-- 9. SI TE PASA: friend case first; every risk message comes with an action -->
+<section class="day" id="ayuda">
+  <div class="wrap">
+    <p class="kicker">If it happens to a friend, or to you</p>
+    <h2 class="big">Asking for help isn't losing. It's the smartest move.</h2>
+    <div class="signs">
+      <p class="fact-label">Signs that something isn't right</p>
+      <ul>
+        <li>They think (or you think) about betting almost all the time.</li>
+        <li>They bet to win back what they lost.</li>
+        <li>They lie about money or borrow money to play.</li>
+        <li>They get grumpy if they can't play.</li>
+      </ul>
+    </div>
+    <p class="body"><strong>If it's a friend:</strong> don't scold them or make fun of them. Tell them you care, and help them tell a grown-up they trust. <strong>If it's you:</strong> tell someone in your family, a teacher or your school counselor. If you don't know how to start, copy this:</p>
+    <div class="script">
+      <p id="script-text">I want to tell you something that's hard for me to say: I've been betting (or a friend has been betting) and I don't know how to stop. Can you help me?</p>
+      <button type="button" class="btn" id="copy">Copy</button>
+      <span class="copied" id="copied" aria-live="polite"></span>
+    </div>
+    <div class="help">
+      <div class="help-main">
+        <p class="fact-label">In the United States</p>
+        <p><strong>1-800-GAMBLER</strong> (1-800-426-2537): free, confidential, 24 hours a day, by phone, text or chat. In an emergency, call <strong>911</strong>. In another country, ask a grown-up you trust to find your local helpline with you.</p>
+      </div>
+      <div>
+        <p class="fact-label">Anywhere in Argentina</p>
+        <p><strong>141</strong>, Sedronar: free, confidential, 24 hours a day.<br><strong>Line 102</strong>.<br><strong>TINA</strong> chatbot on WhatsApp: <strong>11 3910-1010</strong>.</p>
+      </div>
+      <div>
+        <p class="fact-label">City of Buenos Aires</p>
+        <p><strong>0800-666-6006</strong>, free, Monday to Friday from 9 a.m. to 5 p.m.<br>Boti on WhatsApp: <strong>11 5050-0147</strong>, by typing "ludopatía" (gambling addiction).</p>
+      </div>
+      <div>
+        <p class="fact-label">Province of Buenos Aires</p>
+        <p><strong>0800-444-4000</strong>, free. Compulsive Gambling Prevention and Support Program.</p>
+      </div>
+    </div>
+    <p class="fine">If it's an emergency in Argentina: <strong>911</strong>.</p>
+  </div>
+</section>
+
+<!-- 10. CIERRE -->
+<section class="end" id="cierre">
+  <div class="wrap">
+    <h2 class="end-title">The house always wins.<br><span>You can choose not to play.</span></h2>
+    <a class="end-link" href="lecciones.html?lang=en">Want to learn how to really grow your money? →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>Educational simulation: the chips are fake, there's no betting and no real money here. The numbers for the roulette wheel, the simulator and the odds are real math. Help lines checked on official websites of Argentina's national government (argentina.gob.ar), the City and the Province of Buenos Aires, in November 2026. If a number has changed, let us know.</p>
+</footer>
+
+<script src="la-casa.js"></script>
+</body>
+</html>
