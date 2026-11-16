@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" stroke="#141414" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M400 420c-50-25-120-30-190-20V250c70-10 140-5 190 20z"/>
+<path d="M400 420c50-25 120-30 190-20V250c-70-10-140-5-190 20z"/>
+<path d="M240 290c40-6 85-3 125 10M240 320c40-6 85-3 125 10M240 350c40-6 85-3 125 10M435 300c40-13 85-16 125-10M435 330c40-13 85-16 125-10M435 360c40-13 85-16 125-10"/>
+<path d="M300 240c80-5 170-35 240-125 20-25 35-45 50-60"/><path d="M572 58l18-3-2 18"/>
+<circle cx="380" cy="228" r="6" fill="#b3121b" stroke="none"/><circle cx="470" cy="190" r="6" fill="#b3121b" stroke="none"/><circle cx="540" cy="115" r="6" fill="#b3121b" stroke="none"/>
+</svg>
