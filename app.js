@@ -767,6 +767,7 @@
     Array.prototype.forEach.call(box.querySelectorAll('button[data-lang]'), function (b) {
       b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
+    if (window.IDCTheme) window.IDCTheme.paint();
   }
 
   function setLang(next) {
