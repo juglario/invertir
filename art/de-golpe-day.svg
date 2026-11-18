@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" stroke="#1f1a2e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
 <path d="M250 180c0-110 300-110 300 0"/>
 <path d="M250 180q37.5-20 75 0t75 0 75 0 75 0"/>
 <path d="M400 74v106M250 180l125 155M325 180l55 155M475 180l-55 155M550 180l-125 155"/>
 <path d="M375 335c-40 25-50 95-10 115h70c40-20 30-90-10-115z"/><path d="M372 335h56"/>
-<text x="400" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#c8ff2e" stroke="none">$</text>
+<text x="400" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#f6c445" stroke="none">$</text>
 <path d="M90 120c0-20 30-24 38-8 8-14 36-10 34 10 14 2 14 22 0 24H96c-16 0-18-22-6-26zM640 300c0-20 30-24 38-8 8-14 36-10 34 10 14 2 14 22 0 24h-66c-16 0-18-22-6-26z"/>
 </svg>

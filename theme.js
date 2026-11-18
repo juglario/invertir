@@ -27,7 +27,7 @@
   function apply(mode) {
     root.setAttribute('data-theme', mode);
     meta('color-scheme', mode === 'night' ? 'dark' : 'light');
-    meta('theme-color', mode === 'night' ? '#2a1f48' : '#cdbdf5');
+    meta('theme-color', mode === 'night' ? '#0b0a0f' : '#7b2cbf');
     paint();
   }
   apply(saved() || (mq && mq.matches ? 'night' : 'day'));

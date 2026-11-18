@@ -38,6 +38,8 @@ main.wrap { padding-top: 40px; padding-bottom: 24px; }
 .top { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--line); }
 .grid { display: grid; gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--line); }
 .grid.two { grid-template-columns: 1fr 1fr; }
+.grid.three { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.head .tagline a { font: 600 15px/1.4 var(--mono); text-underline-offset: 4px; }
 .grid.four { grid-template-columns: repeat(4, 1fr); gap: 28px; }
 .grid.lists { border-bottom: 0; }
 
@@ -85,11 +87,12 @@ ul.plain { list-style: none; padding-left: 0; }
 
 @media (max-width: 960px) {
   .grid.four { grid-template-columns: 1fr 1fr; }
+  .grid.three { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   body { font-size: 16.5px; }
   .head { padding: 44px 0 28px; }
-  .top, .grid.two, .grid.four { grid-template-columns: 1fr; }
+  .top, .grid.two, .grid.three, .grid.four { grid-template-columns: 1fr; }
   .top { gap: 32px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

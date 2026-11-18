@@ -1,59 +1,65 @@
 /* theme.css: one look for every page, loaded LAST so it wins over each page's
    own stylesheet. Magazine structure (serif headlines, hairlines, generous
-   space) with a street accent: pastel violet, one acid-lime neon used only as
-   a FILL with dark text on it, condensed heavy caps for labels, square cards
-   with a flat offset shadow. Two modes, day and night, switched by theme.js
+   space) with a street accent: violet headers, lots of black, one loud
+   straw-hat yellow used only as a FILL with black text on it, condensed heavy
+   caps for labels, square cards with a flat offset shadow. Two modes, day and night, switched by theme.js
    through <html data-theme="day|night">. The casino on "La casa" keeps its own
-   costume on purpose (hot pink vs. our lime: "the casino is another world").
+   costume on purpose (its neon pink and gold are "the other world").
    Body classes: t-portada | t-lessons | t-vp | t-casa, plus pg-<page>. */
 
 /* ================= tokens ================= */
 :root {
   color-scheme: light;
-  --ny-paper: #f7f3fc;      /* lavender paper */
-  --ny-paper-2: #ede5f8;
-  --ny-white: #ffffff;      /* card surface */
-  --ny-ink: #1f1a2e;
-  --ny-muted: #5d5670;
-  --ny-hair: rgba(31, 26, 46, 0.14);
-  --ny-surface-2: #e6ddf4;  /* chart/meter tracks */
-  --ny-surface-3: #d3c7ec;
-  --ny-band: #cdbdf5;       /* header band: pastel violet */
-  --ny-band-ink: #1f1a2e;
-  --ny-band-muted: rgba(31, 26, 46, 0.74);
-  --ny-dots: rgba(31, 26, 46, 0.17);
-  --ny-accent: #6b3fd4;     /* links, labels: AA on paper (5.8:1) */
-  --ny-neon: #c8ff2e;       /* acid lime: fills only, never text on light */
-  --ny-on-neon: #1f1a2e;
-  --ny-shadow: #1f1a2e;     /* flat offset shadow */
+  /* Day: white paper, black ink, saturated violet headers (fintech purple, our own
+     shade), straw-hat yellow as the loud colour, red only for losses and warnings. */
+  --ny-paper: #fbfaff;
+  --ny-paper-2: #f1ebfa;
+  --ny-white: #ffffff;
+  --ny-ink: #111014;
+  --ny-muted: #57525f;
+  --ny-hair: rgba(17, 16, 20, 0.14);
+  --ny-surface-2: #ece3f8;
+  --ny-surface-3: #d6c6ee;
+  --ny-band: #7b2cbf;       /* header band: violet (white text 7.8:1) */
+  --ny-band-ink: #ffffff;
+  --ny-band-muted: rgba(255, 255, 255, 0.84);
+  --ny-dots: rgba(255, 255, 255, 0.16);
+  --ny-accent: #6a1fb0;     /* links, labels on white: 8.4:1 */
+  --ny-neon: #f6c445;       /* straw-hat yellow: fills only, black text on it */
+  --ny-on-neon: #111014;
+  --ny-black: #111014;      /* solid black blocks: closings, footer, section bands */
+  --ny-shadow: #111014;     /* flat offset shadow */
   --ny-green: #1e7a4e;
-  --ny-bad: #c0344a;
-  --ny-select: #e3d6ff;
+  --ny-bad: #c62828;        /* luffy red, darkened for AA on white */
+  --ny-select: #e9d8ff;
   --ny-display: "Hoefler Text", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --ny-text: "Iowan Old Style", "Hoefler Text", "Charter", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --ny-sans: "Helvetica Neue", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --ny-label: "Avenir Next Condensed", "HelveticaNeue-CondensedBold", "Helvetica Neue", "Arial Narrow", "Roboto Condensed", system-ui, sans-serif;
-  --ny-tape: repeating-linear-gradient(-45deg, #c8ff2e 0 12px, #1f1a2e 12px 24px);
+  --ny-accent-on-black: #b78cff;
+  --ny-tape: repeating-linear-gradient(-45deg, #f6c445 0 12px, #111014 12px 24px);
 }
 html[data-theme="night"] {
   color-scheme: dark;
-  --ny-paper: #14111d;
-  --ny-paper-2: #1b1727;
-  --ny-white: #221d31;
-  --ny-ink: #eee9f7;
-  --ny-muted: #a79fbb;
-  --ny-hair: rgba(238, 233, 247, 0.14);
-  --ny-surface-2: #2a2540;
-  --ny-surface-3: #3a3352;
-  --ny-band: #2a1f48;
-  --ny-band-ink: #f7f1ff;
-  --ny-band-muted: rgba(247, 241, 255, 0.76);
-  --ny-dots: rgba(201, 181, 255, 0.13);
-  --ny-accent: #b79bff;     /* 8.1:1 on night paper */
-  --ny-shadow: #6b3fd4;
+  /* Night: mostly black, violet glow in the header texture, same yellow. */
+  --ny-paper: #0b0a0f;
+  --ny-paper-2: #131119;
+  --ny-white: #17141f;
+  --ny-ink: #f4f1fa;
+  --ny-muted: #a9a3b6;
+  --ny-hair: rgba(244, 241, 250, 0.14);
+  --ny-surface-2: #221d2e;
+  --ny-surface-3: #332b45;
+  --ny-band: #0f0d14;
+  --ny-band-ink: #ffffff;
+  --ny-band-muted: rgba(255, 255, 255, 0.78);
+  --ny-dots: rgba(176, 120, 255, 0.28);
+  --ny-accent: #c29bff;     /* 9:1 on black */
+  --ny-black: #000000;
+  --ny-shadow: #7b2cbf;
   --ny-green: #5fd39a;
-  --ny-bad: #ff7d8c;
-  --ny-select: rgba(183, 155, 255, 0.35);
+  --ny-bad: #ff6b5e;
+  --ny-select: rgba(194, 155, 255, 0.35);
 }
 
 html { background: var(--ny-paper); }
@@ -62,7 +68,7 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 /* Lining figures everywhere: old-style numerals make 10 read like IO. */
 .t-portada *, .t-lessons *, .t-vp *, .t-casa * { font-variant-numeric: lining-nums !important; font-feature-settings: "lnum" 1 !important; }
 
-/* ================= headers: pastel band, halftone dots, lime tape, line drawing ================= */
+/* ================= headers: violet band (black at night), halftone dots, yellow tape, line drawing ================= */
 .pg-portada .head, .t-vp .hero, .t-lessons .hero {
   position: relative; isolation: isolate; overflow: hidden;
   background-color: var(--ny-band);
@@ -83,6 +89,8 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 .pg-futbolistas .hero::before { background-image: url("art/futbolistas-day.svg"); }
 .pg-creadores .hero::before { background-image: url("art/creadores-day.svg"); }
 .pg-de-golpe .hero::before { background-image: url("art/de-golpe-day.svg"); }
+.pg-contenidos .hero::before { background-image: url("art/lecciones-day.svg"); }
+.pg-escuelas .hero::before { background-image: url("art/academia-day.svg"); }
 [data-theme="night"] .pg-portada .head::before { background-image: url("art/portada-night.svg"); }
 [data-theme="night"] .pg-lecciones .hero::before { background-image: url("art/lecciones-night.svg"); }
 [data-theme="night"] .pg-empezar .hero::before { background-image: url("art/empezar-night.svg"); }
@@ -90,10 +98,12 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 [data-theme="night"] .pg-futbolistas .hero::before { background-image: url("art/futbolistas-night.svg"); }
 [data-theme="night"] .pg-creadores .hero::before { background-image: url("art/creadores-night.svg"); }
 [data-theme="night"] .pg-de-golpe .hero::before { background-image: url("art/de-golpe-night.svg"); }
+[data-theme="night"] .pg-contenidos .hero::before { background-image: url("art/lecciones-night.svg"); }
+[data-theme="night"] .pg-escuelas .hero::before { background-image: url("art/academia-night.svg"); }
 @media (max-width: 720px) {
   .pg-portada .head::before, .t-vp .hero::before, .t-lessons .hero::before { background-position: right -20px bottom 10px; background-size: 62vw auto; opacity: 0.35; }
 }
-/* The italic word of every headline gets a lime highlighter (dark text on it in both modes). */
+/* The italic word of every headline gets a yellow highlighter (black text on it in both modes). */
 .pg-portada .post h2 em, .t-vp .hero h1 em, .t-lessons .hero-title em {
   font-style: italic; font-weight: 400; color: var(--ny-on-neon);
   background: linear-gradient(transparent 10%, var(--ny-neon) 10% 97%, transparent 97%);
@@ -166,9 +176,9 @@ html:not([data-theme]) .theme-btn { display: none; }
 .t-lessons .hero .kicker, .t-lessons .hero .hero-title .dot { color: var(--ny-band-ink); }
 .t-lessons .part-divider { background: var(--ny-paper-2); border-top: 2px solid var(--ny-ink); border-bottom: 1px solid var(--ny-hair); }
 .t-lessons .hero-title, .t-lessons .part-title, .t-lessons .lesson-title, .t-lessons .end-title { font-family: var(--ny-display); font-weight: 400; letter-spacing: -0.01em; }
-.t-lessons .end { background: var(--ny-paper-2); color: var(--ny-ink); border-top: 2px solid var(--ny-ink); }
-.t-lessons .end .kicker { color: var(--ny-accent); }
-.t-lessons .end-top { background: var(--ny-neon); color: var(--ny-on-neon); border: 2px solid var(--ny-ink); border-radius: 0; box-shadow: 4px 4px 0 var(--ny-shadow); }
+.t-lessons .end { background: var(--ny-black); color: #fff; border-top: 12px solid transparent; border-image: var(--ny-tape) 12; }
+.t-lessons .end .kicker { color: var(--ny-neon); }
+.t-lessons .end-top { background: var(--ny-neon); color: var(--ny-on-neon); border: 2px solid #fff; border-radius: 0; box-shadow: 4px 4px 0 var(--ny-shadow); }
 .t-lessons .option { border-radius: 0; }
 .t-lessons .option.is-right { border-color: var(--ny-green); background: color-mix(in srgb, var(--ny-green) 18%, transparent); }
 .t-lessons .option.is-wrong { border-color: var(--ny-bad); background: color-mix(in srgb, var(--ny-bad) 16%, transparent); }
@@ -208,12 +218,15 @@ html:not([data-theme]) .theme-btn { display: none; }
 .t-vp .back, .t-vp .team div, .t-vp .sec:not(.dark) .myth.pair > div { background: var(--ny-white); }
 .t-vp .flip, .t-vp .front, .t-vp .back, .t-vp .team div, .t-vp .myth > div { border-radius: 0; }
 .t-vp .rule { border-radius: 0; background: transparent; border-left: 6px solid var(--ny-neon); font-style: italic; }
-.t-vp .end { background: var(--ny-paper-2); border-top: 2px solid var(--ny-ink); }
-.t-vp .end h2 em { color: var(--ny-ink); font-style: italic; }
+.t-vp .end { background: var(--ny-black); color: #fff; border-top: 12px solid transparent; border-image: var(--ny-tape) 12; }
+.t-vp .end h2 em { color: var(--ny-on-neon); background: linear-gradient(transparent 10%, var(--ny-neon) 10% 97%, transparent 97%); font-style: italic; padding: 0 0.06em; }
 .t-vp .end-links a { border-radius: 0; background: var(--ny-neon); color: var(--ny-on-neon); border: 2px solid var(--ny-ink); box-shadow: 4px 4px 0 var(--ny-shadow); font: 800 15px/1.2 var(--ny-label); text-transform: uppercase; letter-spacing: 0.04em; }
-.t-vp .end-links a.ghost { background: transparent; color: var(--ny-ink); box-shadow: none; }
+.t-vp .end-links a { border-color: #fff; box-shadow: 4px 4px 0 var(--ny-accent-on-black); }
+.t-vp .end-links a.ghost { background: transparent; color: #fff; box-shadow: none; }
 .t-vp .end-links a:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ny-shadow); }
-.t-vp .end-links a.ghost:hover { box-shadow: none; background: var(--ny-paper); }
+.t-vp .end-links a.ghost:hover { box-shadow: none; background: rgba(255, 255, 255, 0.12); }
+.t-vp .foot, .t-portada .foot { background: var(--ny-black); color: #d9d4e4; border-top: 0; }
+.t-vp .foot p, .t-portada .foot p { color: #d9d4e4; }
 
 /* ================= la casa (daylight part; the casino keeps its costume) ================= */
 .t-casa {
@@ -228,8 +241,8 @@ html:not([data-theme]) .theme-btn { display: none; }
   background: var(--ny-white); color: var(--ny-ink); border-radius: 0;
 }
 .t-casa .think { border-radius: 0; background: transparent; border-left: 6px solid var(--ny-neon); font-style: italic; }
-.t-casa .end { background: var(--ny-paper-2); border-top: 2px solid var(--ny-ink); }
-.t-casa .end-link { border-radius: 0; background: var(--ny-neon); color: var(--ny-on-neon); border: 2px solid var(--ny-ink); box-shadow: 4px 4px 0 var(--ny-shadow); font-family: var(--ny-label); }
+.t-casa .end { background: var(--ny-black); color: #fff; border-top: 12px solid transparent; border-image: var(--ny-tape) 12; }
+.t-casa .end-link { border-radius: 0; background: var(--ny-neon); color: var(--ny-on-neon); border: 2px solid #fff; box-shadow: 4px 4px 0 var(--ny-accent-on-black); font-family: var(--ny-label); }
 .t-casa .day .btn { border-radius: 0; }
 
 @media (prefers-reduced-motion: reduce) { .t-vp .front, .t-vp .back { transition: none; } .t-vp .end-links a:hover { transform: none; } }

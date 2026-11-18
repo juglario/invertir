@@ -1,0 +1,52 @@
+/* contenidos.html: the contents page. Loaded after vp.css, before theme.css.
+   Works with no JavaScript: search and share are hidden until indice.js shows them. */
+
+.ix-bar { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+.ix-bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; padding-top: 10px; padding-bottom: 10px; }
+.ix-nav { display: flex; gap: 4px; overflow-x: auto; flex: 1 1 420px; scrollbar-width: none; }
+.ix-nav::-webkit-scrollbar { display: none; }
+.ix-nav a { flex: none; padding: 9px 14px; font: 600 12px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-radius: 999px; }
+.ix-nav a:hover, .ix-nav a.on { background: var(--ink); color: var(--paper); }
+.ix-search { flex: 1 1 260px; display: flex; flex-direction: column; }
+.ix-search[hidden] { display: none; }
+.ix-search label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.ix-search input { width: 100%; padding: 11px 14px; font: 400 16px/1.2 var(--sans); color: var(--ink); background: #fff; border: 1.5px solid var(--ink); border-radius: 10px; }
+.ix-none { margin: 28px auto 0; font: 500 16px/1.4 var(--mono); color: var(--muted); }
+.ix-none[hidden] { display: none; }
+
+/* suggested paths */
+.ix-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+.ix-path { display: flex; flex-direction: column; padding: 24px 24px 22px; background: #fff; border: 1px solid var(--line); border-radius: 22px; }
+.ix-pn { margin: 0 0 6px; font: 400 54px/1 var(--serif); color: var(--signal); }
+.ix-path h3 { margin: 0 0 8px; font: 400 26px/1.15 var(--serif); }
+.ix-who { margin: 0 0 8px; font: 400 18px/1.4 var(--serif); color: var(--muted); }
+.ix-what { margin: 0 0 18px; font-size: 16px; }
+.ix-go { margin-top: auto; align-self: flex-start; font: 650 15px/1.2 var(--sans); color: var(--ink); text-underline-offset: 4px; }
+.ix-go:hover { color: var(--signal); }
+
+/* index lists */
+.ix-sec .wrap { max-width: 880px; }
+.ix-part { display: flex; align-items: baseline; gap: 12px; margin: 34px 0 8px; font: 600 12.5px/1.2 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.ix-lvl { font: 400 30px/1 var(--serif); letter-spacing: 0; color: var(--signal); }
+.ix-list { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
+.ix-item { border-bottom: 1px solid var(--line); }
+.ix-item[hidden], .ix-part[hidden], .ix-sec[hidden] { display: none; }
+.ix-item a { display: grid; grid-template-columns: 3.2ch 1fr auto; gap: 8px 18px; align-items: baseline; padding: 16px 6px; color: var(--ink); text-decoration: none; transition: background 0.15s, padding 0.15s; }
+.ix-item a:hover, .ix-item a:focus-visible { background: var(--paper-2); padding-left: 14px; }
+.ix-n { font: 500 14px/1.4 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.ix-b { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.ix-t { font: 400 clamp(20px, 2.4vw, 25px)/1.2 var(--serif); }
+.ix-d { font-size: 15.5px; line-height: 1.45; color: var(--muted); max-width: 62ch; }
+.ix-m { font: 500 12.5px/1.4 var(--mono); color: var(--muted); white-space: nowrap; }
+.ix-cta { margin: 16px 0 0; font-size: 17px; }
+.ix-endp { margin: 0 0 24px; max-width: 52ch; font-size: 19px; color: var(--muted-dark); }
+.ix-share { padding: 16px 20px; font: 650 16px/1.2 var(--sans); cursor: pointer; color: var(--ink); background: var(--champagne); border: 0; border-radius: 14px; }
+.ix-share[hidden] { display: none; }
+
+@media (max-width: 640px) {
+  .ix-item a { grid-template-columns: 3ch 1fr; }
+  .ix-m { grid-column: 2; }
+}
+
+#rutas .wrap { max-width: 1080px; }
+@media (min-width: 900px) { .ix-paths { grid-template-columns: repeat(3, 1fr); } }
