@@ -37,6 +37,7 @@
   --ny-sans: "Helvetica Neue", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --ny-label: "Avenir Next Condensed", "HelveticaNeue-CondensedBold", "Helvetica Neue", "Arial Narrow", "Roboto Condensed", system-ui, sans-serif;
   --ny-accent-on-black: #b78cff;
+  --hd-bad: #ffcdc5;        /* "bad" marks on the violet header (5.0:1 on #7b2cbf); red itself is 2.8 */
   --ny-tape: repeating-linear-gradient(-45deg, #f6c445 0 12px, #111014 12px 24px);
   /* header field */
   --hd-base: linear-gradient(135deg, #7b2cbf 0%, #4b1a8c 52%, #170a2e 100%);
@@ -104,6 +105,7 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 .pg-de-golpe .hero::before { background-image: url("art/de-golpe-day.svg"); }
 .pg-contenidos .hero::before { background-image: url("art/lecciones-day.svg"); }
 .pg-escuelas .hero::before { background-image: url("art/academia-day.svg"); }
+.pg-escuela .hero::before { background-image: url("art/academia-day.svg"); }
 [data-theme="night"] .pg-portada .head::before { background-image: url("art/portada-night.svg"); }
 [data-theme="night"] .pg-lecciones .hero::before { background-image: url("art/lecciones-night.svg"); }
 [data-theme="night"] .pg-empezar .hero::before { background-image: url("art/empezar-night.svg"); }
@@ -113,6 +115,7 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 [data-theme="night"] .pg-de-golpe .hero::before { background-image: url("art/de-golpe-night.svg"); }
 [data-theme="night"] .pg-contenidos .hero::before { background-image: url("art/lecciones-night.svg"); }
 [data-theme="night"] .pg-escuelas .hero::before { background-image: url("art/academia-night.svg"); }
+[data-theme="night"] .pg-escuela .hero::before { background-image: url("art/academia-night.svg"); }
 @media (max-width: 720px) {
   .pg-portada .head::before, .t-vp .hero::before, .t-lessons .hero::before { background-position: right -20px bottom 10px; background-size: 62vw auto; opacity: 0.35; }
 }
@@ -185,7 +188,10 @@ html:not([data-theme]) .theme-btn { display: none; }
   --muted-dark: var(--ny-muted); --line-dark: var(--ny-hair);
 }
 .t-lessons .instrument { --ink: var(--ny-white); }
-.t-lessons .hero { --ink: var(--ny-band); --paper: var(--ny-band-ink); --muted-dark: var(--ny-band-muted); --line-dark: var(--ny-hair); --signal: var(--ny-accent); }
+.t-lessons .hero { --ink: var(--ny-band); --paper: var(--ny-band-ink); --muted-dark: var(--ny-band-muted); --line-dark: var(--ny-hair); --signal: var(--ny-neon); }
+/* Hero curve in yellow (violet on violet was 1.2:1); the scroll button is a yellow fill with black text. */
+.t-lessons .scroll-cue { color: var(--ny-on-neon); }
+.t-lessons .entry:hover { color: var(--ny-band-ink); border-color: var(--ny-neon); }
 .t-lessons .hero .kicker, .t-lessons .hero .hero-title .dot { color: var(--ny-band-ink); }
 .t-lessons .part-divider { background: var(--ny-paper-2); border-top: 2px solid var(--ny-ink); border-bottom: 1px solid var(--ny-hair); }
 .t-lessons .hero-title, .t-lessons .part-title, .t-lessons .lesson-title, .t-lessons .end-title { font-family: var(--ny-display); font-weight: 400; letter-spacing: -0.01em; }
@@ -196,6 +202,13 @@ html:not([data-theme]) .theme-btn { display: none; }
 .t-lessons .option.is-right { border-color: var(--ny-green); background: color-mix(in srgb, var(--ny-green) 18%, transparent); }
 .t-lessons .option.is-wrong { border-color: var(--ny-bad); background: color-mix(in srgb, var(--ny-bad) 16%, transparent); }
 .t-lessons .readout.main .readout-v { font-family: var(--ny-display); font-weight: 400; }
+/* Top bar: was white with mix-blend-mode: difference, which painted the brand and the active
+   language lime green over the violet header. Now a solid paper bar, readable over anything. */
+.t-lessons .topbar { mix-blend-mode: normal; color: var(--ny-ink); background: var(--ny-paper); border-bottom: 2px solid var(--ny-ink); padding-top: 10px; padding-bottom: 10px; }
+.t-lessons .lang-switch .lang[aria-pressed="true"] { color: var(--ny-on-neon); background: var(--ny-neon); border-color: var(--ny-ink); }
+/* Cash bars and their swatch: the pale surface was 1.6:1 on the card; graphs need 3:1. */
+.t-lessons .bar-c { fill: var(--ny-muted); }
+.t-lessons .sw-c { background: var(--ny-muted); }
 
 /* ================= entry pages (vp.css family) ================= */
 .t-vp {
@@ -206,7 +219,9 @@ html:not([data-theme]) .theme-btn { display: none; }
   --serif: var(--ny-display); --mono: var(--ny-sans);
   background: var(--ny-paper); font-family: var(--ny-text);
 }
-.t-vp .hero { min-height: 0; padding: 120px 24px 76px; --ivory: var(--ny-band-ink); --champagne: var(--ny-accent); --muted-dark: var(--ny-band-muted); --line-dark: var(--ny-hair); --signal: var(--ny-accent); }
+.t-vp .hero { min-height: 0; padding: 120px 24px 76px; --ivory: var(--ny-band-ink); --champagne: var(--ny-neon); --muted-dark: var(--ny-band-muted); --line-dark: var(--ny-hair); --signal: var(--hd-bad); }
+/* Hero charts: yellow bars (fill), white labels; violet on the violet band was 1.2:1. */
+.t-vp .hero .h-label.gold { fill: var(--ny-band-ink); }
 .t-vp .hero .tag { color: var(--ny-band-ink); }
 .t-vp .hero h1 { font-weight: 400; font-size: clamp(42px, 7vw, 92px); line-height: 1.02; letter-spacing: -0.01em; }
 .t-vp .hero .sub { font-style: italic; color: var(--ny-band-muted); }
@@ -257,6 +272,9 @@ html:not([data-theme]) .theme-btn { display: none; }
 .t-casa .end { background: var(--ny-black); color: #fff; border-top: 12px solid transparent; border-image: var(--ny-tape) 12; }
 .t-casa .end-link { border-radius: 0; background: var(--ny-neon); color: var(--ny-on-neon); border: 2px solid #fff; box-shadow: 4px 4px 0 var(--ny-accent-on-black); font-family: var(--ny-label); }
 .t-casa .day .btn { border-radius: 0; }
+/* Pressed and script buttons: violet with black text was 2.2:1; yellow fill with black text instead. */
+.t-casa .btn[aria-pressed="true"], .t-casa .script .btn { background: var(--ny-neon); color: var(--ny-on-neon); }
+.t-casa .copied { color: var(--ny-muted); }
 
 @media (prefers-reduced-motion: reduce) { .t-vp .front, .t-vp .back { transition: none; } .t-vp .end-links a:hover { transform: none; } }
 

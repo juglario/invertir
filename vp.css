@@ -186,11 +186,11 @@ strong { font-weight: 650; }
 .tbl tbody th { font: 400 19px/1.2 var(--serif); }
 .tbl tbody tr:last-child th, .tbl tbody tr:last-child td { border-bottom: 0; }
 .lvl { display: inline-block; padding: 3px 9px; border-radius: 999px; font: 600 12px/1.3 var(--mono); white-space: nowrap; }
-.lvl.l1 { background: #dcefe3; color: var(--good); }
+.lvl.l1 { background: #dcefe3; color: #17603c; }
 .lvl.l2 { background: #ecefd6; color: #5e6a12; }
 .lvl.l3 { background: #f6e8c8; color: #8a5a00; }
 .lvl.l4 { background: #fbdccd; color: #a0401a; }
-.lvl.l5 { background: #f7d2ce; color: var(--bad); }
+.lvl.l5 { background: #f7d2ce; color: #a31f1f; }
 .steps { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
 .steps li { font: 500 16px/1.4 var(--sans); color: var(--ivory); }
 .steps b { display: inline-block; min-width: 92px; font: 600 12.5px/1.4 var(--mono); color: var(--champagne); }

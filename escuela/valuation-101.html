@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Una buena valuación junta un relato sobre la empresa con los números que lo vuelven posible. Y hasta el número más famoso, el P/E, te puede engañar si no sabés leerlo.">
+<title>Valuar es contar una historia con números · La escuela</title>
+<link rel="alternate" hreflang="es" href="valuation-101.html">
+<link rel="alternate" hreflang="en" href="valuation-101-en.html">
+<link rel="alternate" hreflang="pt-BR" href="valuation-101-pt.html">
+<script src="../theme.js"></script>
+<link rel="stylesheet" href="../vp.css">
+<link rel="stylesheet" href="../theme.css">
+<link rel="stylesheet" href="escuela.css">
+</head>
+<body class="t-vp pg-escuela">
+<nav class="langs" aria-label="Idioma"><a href="valuation-101.html" hreflang="es" lang="es" aria-current="page">ES</a><a href="valuation-101-en.html" hreflang="en" lang="en">EN</a><a href="valuation-101-pt.html" hreflang="pt-BR" lang="pt-BR">PT</a><button type="button" class="theme-btn" aria-pressed="false" aria-label="Modo noche" title="Modo noche"><svg class="ic-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></nav>
+
+<nav class="top"><a href="../academia.html">← La escuela</a><a href="../contenidos.html">Todos los contenidos</a></nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="tag">301 · Fuentes: Aswath Damodaran, con dos trampas del P/E señaladas por David Galán</p>
+    <h1>Valuar es contar una historia <em>con números.</em></h1>
+    <p class="sub">Una buena valuación junta un relato sobre la empresa con los números que lo vuelven posible. Y hasta el número más famoso, el P/E, te puede engañar si no sabés leerlo.</p>
+    <ul class="esc-tools" aria-label="Herramientas de esta entrada"><li>Flujo de fondos descontado de juguete</li><li>Valuación al revés</li></ul>
+  </div>
+</header>
+
+<div class="esc-layout">
+<aside class="esc-toc" aria-labelledby="esc-toc-h">
+  <p class="esc-toc-h" id="esc-toc-h">En esta entrada</p>
+  <ol><li><a href="#idea">Ni cuento de hadas ni planilla vacía.</a></li><li><a href="#mecanismo">Un negocio vale la caja que te va a dar, traída a hoy.</a></li><li><a href="#simulador-dcf">Armá tu historia y mirá cuánto vale.</a></li><li><a href="#pe">El P/E es una valuación comprimida en un número.</a></li><li><a href="#al-reves">No preguntes cuánto vale. Preguntá qué tiene que pasar.</a></li><li><a href="#trampas">Mismo número, distinta historia.</a></li><li><a href="#errores">Lo que el modelo no puede hacer por vos.</a></li><li><a href="#ejercicio">Un P/E, una tasa y una pregunta.</a></li></ol>
+</aside>
+
+<main class="esc" id="contenido">
+<section class="esc-sec" id="idea">
+  <p class="kicker">La idea</p>
+  <h2 class="big">Ni cuento de hadas ni planilla vacía.</h2>
+  <p>Aswath Damodaran, profesor de finanzas en la Universidad de Nueva York y uno de los que más enseñó a valuar empresas, lo resume así: una historia sin números es un cuento de hadas, y unos números sin historia son una planilla vacía.</p>
+  <p>Valuar empieza por la historia. ¿Qué es esta empresa y en qué se va a convertir? ¿Por qué la gente le va a seguir comprando? Después viene la parte incómoda: ¿cuánto tendrían que ser las ventas, los márgenes y la plata que le queda libre para que esa historia sea cierta? ¿Y eso es creíble? Si la historia dice "va a ser enorme" pero los números que hacen falta son imposibles, el problema no es de la planilla: es de la historia.</p>
+  <p>Valuar no es adivinar el precio de mañana. Es estimar cuánto vale un negocio por la plata que va a generar en toda su vida, para después compararlo con lo que piden por él (ver <a href="margin-of-safety.html">Precio, valor y margen de seguridad</a>).</p>
+</section>
+
+<section class="esc-sec" id="mecanismo">
+  <p class="kicker">El mecanismo</p>
+  <h2 class="big">Un negocio vale la caja que te va a dar, traída a hoy.</h2>
+  <p>La idea de fondo tiene un nombre largo: <strong>flujo de fondos descontado</strong>. Tiene dos partes.</p>
+  <p>La primera es la <strong>caja libre</strong>: la plata que le queda a la empresa cada año después de pagar sueldos, proveedores, impuestos y lo que necesita invertir para seguir funcionando. Es lo que, en teoría, podría repartirles a sus dueños.</p>
+  <p>La segunda es el <strong>descuento</strong>. Un peso dentro de diez años vale menos que un peso hoy, por dos razones: podrías invertir el de hoy y tenerlo crecido, y el de dentro de diez años no es seguro. Por eso cada peso futuro se divide por (1 + r) tantas veces como años falten, donde <em>r</em> es la <strong>tasa de descuento</strong>: lo que le pedís a esa inversión por esperar y por el riesgo.</p>
+  <p class="formula">valor = caja año 1 / (1 + r) + caja año 2 / (1 + r)² + ... + lo que viene después</p>
+  <p>Ese "lo que viene después" se llama <strong>valor terminal</strong>: una manera de resumir todos los años lejanos suponiendo que la caja crece despacio para siempre. Más adelante vas a ver que suele ser la parte más grande del valor, y la más difícil de saber.</p>
+</section>
+
+<section class="esc-sec" id="simulador-dcf">
+  <p class="kicker">Probalo</p>
+  <h2 class="big">Armá tu historia y mirá cuánto vale.</h2>
+  <p>Una empresa imaginaria vende 100 por año hoy. Elegí cuánto crecen sus ventas durante 10 años, qué parte de cada venta se vuelve caja libre y a qué tasa descontás. Después del año 10, la caja crece 2,5% por año para siempre. La línea roja es el precio que pide el mercado. Es un modelo de juguete: sirve para ver la forma, no para valuar una empresa real.</p>
+  <figure class="viz-card" data-viz="dcf">
+    <noscript><p>Este simulador necesita JavaScript. Con números calculados: ventas de 100 que crecen 10% por año durante 10 años, con 15% de margen de caja y una tasa de 9%, dan un valor de unos 417. De eso, unos 259 (62%) vienen de después del año 10. Con una tasa de 8% el valor sube a unos 502, y con 10% baja a 355.</p></noscript>
+  </figure>
+  <p>Tres cosas para mirar. Primero, la barra de la derecha: con los valores de arranque, más de la mitad del valor viene de después del año 10, o sea de años que nadie puede ver. Segundo, la tasa: pasar de 9% a 10% le saca cerca de 15% al valor, sin que la empresa cambie en nada. Tercero, el crecimiento: con 5% por año el valor es unos 286, con 15% es unos 608. La historia que contás pesa más que cualquier decimal.</p>
+</section>
+
+<section class="esc-sec" id="pe">
+  <p class="kicker">El atajo más famoso</p>
+  <h2 class="big">El P/E es una valuación comprimida en un número.</h2>
+  <p>El <strong>P/E</strong> (precio sobre ganancias) dice cuántos años de las ganancias de hoy pagás al comprar una acción. Un P/E de 20 quiere decir que pagás 20 veces lo que la empresa gana en un año. Parece simple, pero adentro esconde una valuación entera.</p>
+  <p>Si una empresa no necesitara reinvertir y su caja creciera a una tasa <em>g</em> para siempre, la cuenta de arriba se simplifica muchísimo:</p>
+  <p class="formula">precio / caja del año que viene = 1 / (r − g)</p>
+  <p>Con <em>r</em> = 8% y <em>g</em> = 3%, el múltiplo es 1 / 0,05 = 20. Con <em>g</em> = 5% es 33. Con <em>g</em> = 6% es 50. Fijate lo que pasa: cuando el crecimiento supuesto se acerca a la tasa de descuento, el múltiplo se dispara. Un punto más de crecimiento "para siempre" puede justificar un precio mucho más alto. Por eso los múltiplos altos son tan sensibles: cualquier pequeña decepción en el crecimiento esperado los hace caer fuerte.</p>
+  <p>Una advertencia importante: crecer cuesta. Para vender más, una empresa casi siempre tiene que invertir. Si esa inversión rinde menos de lo que le cuesta conseguir la plata, crecer le resta valor, aunque las ventas suban. Damodaran insiste en esto: el crecimiento solo suma cuando lo que la empresa gana sobre lo invertido supera su costo de capital.</p>
+</section>
+
+<section class="esc-sec" id="al-reves">
+  <p class="kicker">La pregunta al revés</p>
+  <h2 class="big">No preguntes cuánto vale. Preguntá qué tiene que pasar.</h2>
+  <p>Hay una forma más honesta de usar el modelo: en vez de inventar un crecimiento y ver qué valor da, partís del precio y preguntás qué crecimiento hace falta para justificarlo. Se le dice <strong>valuación al revés</strong> (en inglés, "reverse DCF"). Lo bueno es que no tenés que adivinar el futuro: solo tenés que juzgar si lo que el precio da por hecho te parece creíble.</p>
+  <figure class="viz-card" data-viz="reverse-dcf">
+    <noscript><p>Este simulador necesita JavaScript. Con números calculados: con un margen de caja de 15% y una tasa de 9%, un precio de 600 por una empresa que hoy vende 100 solo cierra si las ventas crecen cerca de 14,8% por año durante 10 años, o sea que terminan unas 4 veces más grandes. Un precio de 300 pide cerca de 5,7% por año.</p></noscript>
+  </figure>
+  <p>Probá subir el precio y mirá cómo el crecimiento que pide se vuelve heroico. Ventas cuatro o cinco veces más grandes en diez años pasan, pero pocas empresas lo logran. Si el precio necesita eso, no tenés margen para equivocarte.</p>
+</section>
+
+<section class="esc-sec" id="trampas">
+  <p class="kicker">Dos trampas del P/E</p>
+  <h2 class="big">Mismo número, distinta historia.</h2>
+  <p><strong>Primera trampa: el P/E pasado puede estar inflado por ganancias que no se repiten.</strong> El P/E de los últimos doce meses usa las ganancias que ya pasaron. Si en ese período la empresa anotó una ganancia extraordinaria (vendió un edificio, o subió el valor de una inversión que tenía en otra empresa), el P/E se ve bajo aunque el negocio no gane más. Un ejemplo con números inventados: una acción vale $100 y la empresa ganó $5 por acción el último año, así que su P/E pasado es 20. Pero $1,50 de esa ganancia vino de vender un terreno, algo que no se repite. Sin eso, el negocio ganó $3,50 y el P/E real es 100 / 3,5 = 28,6. La pista para detectarlo: si el P/E futuro (calculado con las ganancias esperadas) es más alto que el pasado, el mercado espera que la ganancia baje.</p>
+  <p><strong>Segunda trampa: barato contra su propia historia no es barato contra las tasas.</strong> El inverso del P/E se llama <strong>rendimiento de las ganancias</strong>: lo que te da cada peso invertido, medido en ganancias. Si el mercado cotiza a 18 veces sus ganancias, cada dólar te da 1 / 18 = 5,6%. Si el bono del Tesoro de Estados Unidos a 10 años paga 5%, la diferencia es de apenas 0,6 puntos. Si pagara 2%, con el mismo P/E la diferencia sería de 3,6 puntos. Mismo P/E, premio muy distinto por el riesgo de tener acciones en vez de bonos (ver <a href="../lecciones.html#bonos">lección de bonos</a>). Son números de ejemplo: antes de sacar conclusiones, buscá los de hoy.</p>
+  <p>Estos dos casos son ejemplos del mercado público con fecha, no recomendaciones: sirven para entrenar el ojo.</p>
+</section>
+
+<section class="esc-sec" id="errores">
+  <p class="kicker">Errores comunes y límites</p>
+  <h2 class="big">Lo que el modelo no puede hacer por vos.</h2>
+  <ul class="esc-list">
+    <li><strong>Falsa precisión.</strong> Una planilla con cuarenta pestañas y dos decimales no sabe más que vos sobre el futuro. Lo que importa es la forma: qué crecimiento, cuánto tiempo, a qué tasa.</li>
+    <li><strong>Olvidar la cantidad de acciones.</strong> El valor se reparte por acción. Si la empresa emite acciones nuevas sin parar, tu parte se achica aunque el negocio crezca.</li>
+    <li><strong>Usar el P/E en empresas cíclicas.</strong> En una empresa cuya ganancia sube y baja con un ciclo (por ejemplo, las que venden materias primas), el P/E se ve más bajo justo en el mejor momento del ciclo, cuando la ganancia está en el pico. Barato en el pico no es barato.</li>
+    <li><strong>Confundir precio y valor.</strong> Damodaran separa "ponerle precio" (lo que el mercado paga hoy, con su humor) de "valuar" (lo que vale por su caja). Cuando cae el precio, la pregunta es si cayó el valor, y son dos preguntas distintas.</li>
+    <li><strong>Enamorarse del mercado enorme.</strong> Un mercado gigante es parte de la historia, no un número de caja. Ver <a href="big-market-delusion.html">El mercado enorme que engaña</a>.</li>
+  </ul>
+</section>
+
+<section class="esc-sec" id="ejercicio">
+  <p class="kicker">Para hacer</p>
+  <h2 class="big">Un P/E, una tasa y una pregunta.</h2>
+  <p class="try"><b>Probalo:</b> elegí una empresa que conozcas y buscá en un sitio de cotizaciones su P/E pasado (en inglés, "trailing") y su P/E futuro ("forward"). Calculá 1 dividido el P/E y comparalo con la tasa del bono a 10 años de Estados Unidos. Después escribí en una línea la historia de la empresa y usá el segundo simulador: ¿qué crecimiento por año está dando por hecho el precio? ¿Te lo creés?</p>
+</section>
+
+<section class="esc-base" aria-labelledby="esc-base-h">
+  <p class="kicker" id="esc-base-h">La base</p>
+  <p>Esta entrada da por sabida una lección del curso. Si te falta, empezá por ahí:</p>
+  <p class="esc-base-link"><a href="../lecciones.html#acciones"><span class="esc-base-n">Lección 5</span> ¿Qué es una acción?</a></p>
+</section>
+<p class="esc-date">Actualizada el 18 de noviembre de 2026.</p>
+</main>
+</div>
+
+<nav class="esc-pn" aria-label="La escuela"><a class="esc-prev" href="currency-101.html" rel="prev"><span>Entrada anterior</span>Un rendimiento sin moneda no dice nada.</a><a class="esc-next" href="big-market-delusion.html" rel="next"><span>Entrada siguiente</span>El mercado enorme que engaña.</a></nav>
+
+<section class="end">
+  <div class="wrap wide">
+    <h2>Una idea por vez, <em>con tiempo.</em></h2>
+    <div class="end-links">
+      <a href="../academia.html#valuation-101">Volver a la escuela →</a>
+      <a class="ghost" href="../lecciones.html#acciones">Lección 5: ¿Qué es una acción? →</a>
+    </div>
+  </div>
+</section>
+
+<!-- sitemap:start -->
+<nav class="sitemap" aria-label="Mapa del sitio"><div class="sm-wrap"><p class="sm-brand">Invertir desde cero</p><div class="sm-cols"><div class="sm-col"><h2>Empezar</h2><ul><li><a href="../index.html">Inicio</a></li><li><a href="../empezar.html">La guía Empezar</a></li><li><a href="../lecciones.html">Las doce lecciones</a></li><li><a href="../contenidos.html#herramientas">Calculadoras</a></li><li><a href="../contenidos.html">Todos los contenidos</a></li></ul></div><div class="sm-col"><h2>La escuela</h2><ul><li><a href="../academia.html">Las quince entradas</a></li><li><a href="../academia.html#n101">101 · Fundamentos</a></li><li><a href="../academia.html#n201">201 · Construir un portafolio</a></li><li><a href="../academia.html#n301">301 · Analizar sin engañarte</a></li><li><a href="../academia.html#n401">401 · Decisiones grandes</a></li></ul></div><div class="sm-col"><h2>Escuelas de pensamiento</h2><ul><li><a href="../escuelas.html#indice">El índice</a></li><li><a href="../escuelas.html#valor">Valor</a></li><li><a href="../escuelas.html#ciclos">Ciclos</a></li><li><a href="../escuelas.html#antifragil">Antifrágil</a></li><li><a href="../escuelas.html#concentracion">Concentración</a></li><li><a href="../escuelas.html#tendencia">Tendencia</a></li><li><a href="../escuelas.html#comparar">Compararlas</a></li></ul></div><div class="sm-col"><h2>Secciones</h2><ul><li><a href="../futbolistas.html">Deportes</a></li><li><a href="../creadores.html">Vida digital</a></li><li><a href="../de-golpe.html">Economía personal</a></li><li><a href="../la-casa.html">Para los más chicos</a></li></ul></div></div></div></nav>
+<!-- sitemap:end -->
+<footer class="foot">
+  <p>Educación financiera, no asesoramiento personalizado. Las empresas se mencionan como ejemplos del mercado público, no como recomendación. Las cifras son ejemplos, el rendimiento pasado no garantiza resultados futuros.</p>
+</footer>
+
+<script src="../viz.js"></script>
+<script src="valuation-101.js"></script>
+<script src="escuela.js"></script>
+</body>
+</html>

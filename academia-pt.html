@@ -5,266 +5,194 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Leituras curtas para o segundo passo: risco, valor, ciclos, rebalanceamento, fatores, moeda, valuation e os erros que não têm volta.">
-<title>A Escola: leituras para ir além</title>
+<meta name="description" content="Quinze entradas a fundo sobre risco, valor, ciclos, rebalanceamento, fatores, moeda, valuation e os erros que não têm volta, com simuladores e gráficos.">
+<title>A Escola: quinze entradas a fundo</title>
+<link rel="alternate" hreflang="es" href="academia.html">
+<link rel="alternate" hreflang="en" href="academia-en.html">
+<link rel="alternate" hreflang="pt-BR" href="academia-pt.html">
 <script src="theme.js"></script>
 <link rel="stylesheet" href="vp.css">
 <link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="escuela/escuela.css">
 </head>
 <body class="t-vp pg-academia">
 <nav class="langs" aria-label="Idioma"><a href="academia.html" hreflang="es" lang="es">ES</a><a href="academia-en.html" hreflang="en" lang="en">EN</a><a href="academia-pt.html" hreflang="pt-BR" lang="pt-BR" aria-current="page">PT</a><button type="button" class="theme-btn" aria-pressed="false" aria-label="Modo noturno" title="Modo noturno"><svg class="ic-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></nav>
 
-<nav class="top"><a href="index-pt.html">← Investir do zero</a><a href="empezar-pt.html">O guia Começar</a></nav>
+<nav class="top"><a href="index-pt.html">← Investir do zero</a><a href="contenidos-pt.html">Todo o conteúdo</a></nav>
 
 <header class="hero">
   <div class="hero-inner">
     <p class="tag">A Escola</p>
     <h1>O que vem <em>depois do básico.</em></h1>
-    <p class="sub">Quinze leituras curtas, em ordem da mais simples para a mais difícil. Cada uma explica uma ideia que os investidores experientes usam, com exemplos reais e um exercício para fazer nesta semana.</p>
+    <p class="sub">Quinze entradas a fundo, com simuladores e gráficos para entender cada ideia. Vão da mais simples para a mais difícil: escolha uma e dê a ela o tempo que ela pedir.</p>
   </div>
 </header>
 
 <section class="sec">
   <div class="wrap">
     <p class="kicker">Como ler isto</p>
-    <h2 class="big">Quatro níveis. Não precisa ler tudo de uma vez.</h2>
-    <p class="p">Se você ainda não viu as doze lições do <a class="inline" href="lecciones.html?lang=pt">Investir do zero</a>, comece por lá: estas leituras partem do princípio de que você já sabe o que é uma ação, um título e um fundo de índice. Cada leitura diz qual lição vale a pena ter fresca na cabeça.</p>
-    <ol class="toc">
-      <li><a href="#n101">101 · Os fundamentos que quase ninguém explica</a></li>
-      <li><a href="#n201">201 · Montar e manter um portfólio</a></li>
-      <li><a href="#n301">301 · Analisar empresas sem se enganar</a></li>
-      <li><a href="#n401">401 · As grandes decisões</a></li>
-    </ol>
+    <h2 class="big">Quatro níveis. Uma entrada por vez.</h2>
+    <p class="p">Cada entrada explica uma ideia que os investidores experientes usam, com exemplos reais, simuladores para testar com os seus próprios números e um exercício para fazer nesta semana. Elas partem do princípio de que você já sabe o que é uma ação, um título e um fundo de índice: se ainda não viu as doze lições do <a class="inline" href="lecciones.html?lang=pt">Investir do zero</a>, comece por lá. Cada entrada diz qual lição convém ter fresca na cabeça.</p>
+    <ol class="toc"><li><a href="#n101">101 · Os fundamentos que quase ninguém explica</a></li><li><a href="#n201">201 · Montar e manter um portfólio</a></li><li><a href="#n301">301 · Analisar empresas sem se enganar</a></li><li><a href="#n401">401 · As grandes decisões</a></li></ol>
   </div>
 </section>
 
 <section class="sec alt" id="n101">
-  <div class="wrap">
+  <div class="wrap wide">
     <p class="kicker">Nível 101</p>
     <h2 class="big">Os fundamentos que quase ninguém explica.</h2>
-    <article class="lec" id="risk-vs-return" data-slug="risk-vs-return" data-updated="2026-11-15">
-      <p class="lec-meta">101 · Fonte: Howard Marks</p>
-      <h3>Risco não é o preço se mexer</h3>
-      <p class="lec-one">Para Howard Marks, o risco de verdade é a chance de perder dinheiro para sempre, não o quanto o preço sobe e desce.</p>
-      <p>Muita gente mede o risco olhando o quanto um preço balança. Esse balanço se chama <strong>volatilidade</strong>. Howard Marks, um investidor americano famoso pelas cartas que escreve para os clientes, diz que isso confunde as coisas. Para ele, o risco é a <strong>probabilidade de uma perda permanente</strong>: dinheiro que vai embora e não volta.</p>
-      <p>Olhe dois casos reais. Em 2020, com a pandemia, o índice S&amp;P 500 (umas 500 das maiores empresas dos Estados Unidos) caiu perto de um terço em poucas semanas. Quem não vendeu estava de novo no topo uns seis meses depois do começo da queda. Isso foi volatilidade. Já quem tinha ações do Lehman Brothers, um banco que quebrou em 2008, perdeu quase tudo e nunca recuperou. Isso foi risco.</p>
-      <p>A perda permanente costuma vir de três lados: um negócio que quebra, pagar um preço absurdo ou ter que vender na pior hora porque você precisava do dinheiro. E Marks acrescenta algo estranho: o risco é mais alto justamente quando parece mais baixo, porque quando tudo está tranquilo as pessoas ficam confiantes demais e pagam qualquer coisa.</p>
-      <p>A volatilidade é o preço de entrada para ganhar mais que um CDB ou depósito a prazo. A perda permanente é o que você precisa evitar.</p>
-      <p class="lec-try"><b>Experimente:</b> escolha um índice ou uma empresa conhecida, procure o gráfico dos últimos 20 anos e marque a pior queda. Depois responda por escrito: ele se recuperou? Se recuperou, foi volatilidade. Se não, o que quebrou para virar uma perda permanente?</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#acciones">lição 5, O que é uma ação?</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <div class="esc-cards">
+    <article class="esc-card" id="risk-vs-return">
+      <p class="esc-card-meta"><span class="esc-card-n">01</span> 101 · Fonte: Howard Marks</p>
+      <h3><a href="escuela/risk-vs-return-pt.html">Risco não é o preço se mexer.</a></h3>
+      <p class="esc-card-one">Para Howard Marks, o risco de verdade é a chance de perder dinheiro para sempre, não o quanto o preço sobe e desce.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Simulador de queda e recuperação</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/risk-vs-return-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="margin-of-safety" data-slug="margin-of-safety" data-updated="2026-11-15">
-      <p class="lec-meta">101 · Fonte: Benjamin Graham e Warren Buffett</p>
-      <h3>Preço, valor e margem de segurança</h3>
-      <p class="lec-one">Preço é o que você paga, valor é o que você leva, e a margem de segurança é a distância entre os dois que te protege quando você erra.</p>
-      <p>O <strong>preço</strong> é o que o mercado pede hoje. O <strong>valor</strong> é o quanto algo vale de verdade, pelo dinheiro que vai gerar ao longo da vida. Warren Buffett resumiu assim: preço é o que você paga, valor é o que você leva. Quase sempre andam perto, mas às vezes o medo ou a euforia separam muito os dois.</p>
-      <p>Benjamin Graham, o mestre de Buffett, explicava isso com um personagem: o <strong>Senhor Mercado</strong>, um sócio de humor instável que todo dia se oferece para comprar a sua parte ou vender a dele. Em alguns dias ele está eufórico e pede demais, em outros está deprimido e quase dá de graça. Você não é obrigado a dar ouvidos. Pode esperar.</p>
-      <p>Como ninguém calcula o valor com exatidão, Graham propôs a <strong>margem de segurança</strong>: comprar só quando o preço está bem abaixo do que você acha que vale. Se você acha que algo vale $100 e paga $60, tem uma folga de 40%. Se errou e na verdade valia $80, mesmo assim pagou menos do que vale. Se estava certo e o preço chega a $100, você ganhou $40 sobre $60, ou seja, perto de 67%.</p>
-      <p>Repare que a margem não vem de uma boa empresa, vem do preço. Uma empresa excelente comprada caríssima pode ser um mau investimento.</p>
-      <p class="lec-try"><b>Experimente:</b> pense em algo usado que você conhece bem, como um celular ou uma bicicleta. Estime quanto vale de verdade e procure três anúncios de venda. Para cada um, calcule a margem: (valor menos preço) dividido pelo valor. Antes de olhar, decida a partir de qual preço você diria não.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="margin-of-safety">
+      <p class="esc-card-meta"><span class="esc-card-n">02</span> 101 · Fontes: Benjamin Graham, O investidor inteligente (1949); Warren Buffett, carta aos acionistas da Berkshire Hathaway (2008) e a palestra "The Superinvestors of Graham-and-Doddsville" (1984)</p>
+      <h3><a href="escuela/margin-of-safety-pt.html">Preço, valor e margem de segurança.</a></h3>
+      <p class="esc-card-one">Comprar bem abaixo do que você acha que algo vale permite errar sem perder dinheiro.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Simulador de cenários: quanta margem absorve o seu erro</li><li>Simulador do Senhor Mercado</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/margin-of-safety-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="survival-first" data-slug="survival-first" data-updated="2026-11-15">
-      <p class="lec-meta">101 · Fonte: Nassim Taleb</p>
-      <h3>Primeiro, sobreviver</h3>
-      <p class="lec-one">Antes de tentar ganhar muito, a regra número um é não ficar fora do jogo.</p>
-      <p>Nassim Taleb, um ex-operador de mercado que escreveu vários livros sobre o acaso e os eventos raros, insiste numa ideia: tem perdas que se recuperam e perdas que te tiram do jogo. Essas últimas se chamam <strong>ruína</strong>. Se você se arruína, não importa o quanto foi bem antes, porque a partir do zero os juros compostos não têm com o que trabalhar.</p>
-      <p>A matemática é cruel porque as quedas e as altas não pesam igual. Se você tem $100 e perde 50%, sobram $50. Para voltar a $100 você precisa ganhar $50 sobre $50, ou seja, <strong>+100%</strong>. Se perde 20%, basta +25% ($20 sobre $80). Se perde 90%, sobram $10 e você precisa de +900%. E se perde 100%, nenhuma alta te salva: qualquer porcentagem de zero é zero.</p>
-      <p>Por isso subir 50% e depois cair 50% não te deixa no mesmo lugar: $100 viram $150 e depois $75. Você perdeu um quarto.</p>
-      <p>Como se chega à ruína? Quase sempre pelos mesmos caminhos: colocar tudo numa coisa só, investir com dinheiro emprestado ou ter que vender no meio da queda porque não havia reserva. A ideia de Taleb é simples: que o pior que pode te acontecer seja algo que você consiga aguentar.</p>
-      <p class="lec-try"><b>Experimente:</b> escreva a maior queda que você aguentaria sem vender nem mudar sua vida, em porcentagem. Depois calcule quanto teria que subir para você se recuperar: o que você perde dividido pelo que sobra. Por exemplo, se perde 30%, sobram 70%, e 30 dividido por 70 dá perto de 43%.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#colchon">lição 2, Primeiro, a reserva</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="survival-first">
+      <p class="esc-card-meta"><span class="esc-card-n">03</span> 101 · Fontes: Nassim Nicholas Taleb, Iludido pelo acaso (Fooled by Randomness, 2001) e Antifrágil (2012); John L. Kelly Jr., "A New Interpretation of Information Rate" (1956)</p>
+      <h3><a href="escuela/survival-first-pt.html">Primeiro, sobreviver.</a></h3>
+      <p class="esc-card-one">Há perdas que se recuperam e perdas que tiram você do jogo: a primeira tarefa de quem investe é evitar as segundas.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Calculadora de perda e recuperação</li><li>Simulador de apostas com vantagem</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/survival-first-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="cycles-and-psychology" data-slug="cycles-and-psychology" data-updated="2026-11-15">
-      <p class="lec-meta">101 · Fonte: Howard Marks</p>
-      <h3>O pêndulo do mercado</h3>
-      <p class="lec-one">Os mercados vão e voltam entre a euforia e o pânico, e quase nunca ficam parados no meio.</p>
-      <p>Howard Marks compara o mercado a um <strong>pêndulo</strong>. Numa ponta está a euforia: "tudo vai bem, nada pode dar errado". Na outra, o pânico: "tudo vai mal, nada pode dar certo". O pêndulo passa muito pouco tempo no meio. Quase sempre está a caminho de uma das pontas.</p>
-      <p>O motor não é só a economia, é a psicologia. Quando os preços sobem, as pessoas se empolgam, se cuidam menos e emprestam com mais facilidade, e esse dinheiro empurra os preços ainda mais para cima. Quando caem, acontece o mesmo ao contrário. Um exemplo: o índice Nasdaq, cheio de empresas de tecnologia, bateu um recorde em 2000, em plena febre da internet, e levou uns 15 anos para voltar àquele nível.</p>
-      <p>Marks diz que não dá para prever, mas dá para se preparar. Em vez de adivinhar o futuro, ele propõe ver onde estamos com três perguntas: quanto otimismo existe? Quanto medo de perder as pessoas têm? Quão fácil é conseguir dinheiro emprestado? Muito otimismo, pouco medo e crédito fácil são sinais de cuidado. O contrário costuma esconder oportunidades.</p>
-      <p>Um aviso honesto: chegar cedo se parece muito com errar. O pêndulo pode continuar subindo por anos depois que parecer exagerado para você.</p>
-      <p class="lec-try"><b>Experimente:</b> nesta semana, junte três sinais: as manchetes de economia do dia, o que se comenta sobre investimentos nos seus grupos ou redes, e quantas ofertas de empréstimo fácil aparecem para você. Com isso, coloque o pêndulo de 1 (pânico) a 10 (euforia), anote com a data e repita o exercício daqui a três meses.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#emociones">lição 10, Seu pior inimigo é você</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="cycles-and-psychology">
+      <p class="esc-card-meta"><span class="esc-card-n">04</span> 101 · Fontes: Howard Marks, The Most Important Thing (2011), Mastering the Market Cycle (2018) e o memo "You Can't Predict. You Can Prepare." (2001)</p>
+      <h3><a href="escuela/cycles-and-psychology-pt.html">O péndulo do mercado.</a></h3>
+      <p class="esc-card-one">O humor das pessoas afasta os preços do valor nas duas direções, e três perguntas ajudam a ver para que lado o mercado está inclinado.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Simulador do péndulo: comprar com euforia ou com medo</li><li>As três perguntas de Marks</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/cycles-and-psychology-pt.html">Ler a entrada →</a></p>
     </article>
+    </div>
   </div>
 </section>
 
 <section class="sec" id="n201">
-  <div class="wrap">
+  <div class="wrap wide">
     <p class="kicker">Nível 201</p>
     <h2 class="big">Montar e manter um portfólio.</h2>
-    <article class="lec" id="rebalancing" data-slug="rebalancing" data-updated="2026-11-15">
-      <p class="lec-meta">201 · Fonte: Vanguard (Jaconetti, Kinniry e Zilbering, 2010) e Larry Swedroe</p>
-      <h3>Rebalancear com bandas</h3>
-      <p class="lec-one">Rebalancear não é uma tarefa de calendário: é uma regra que só entra em ação quando algo saiu do lugar de verdade.</p>
-      <p>A regra dos 5 pontos tem um problema com as partes pequenas: se algo pesa 10% na sua receita, sair 5 pontos é ficar com a metade ou uma vez e meia do que você queria. Por isso muita gente usa a regra 5/25, popularizada pelo autor Larry Swedroe: você rebalanceia quando uma parte sai 5 pontos ou 25% do próprio peso, o que vier primeiro. Para uma parte de 10%, a banda vai de 7,5% a 12,5%. Para uma de 70%, continua sendo de 65% a 75%.</p>
-      <p>Dentro da banda, você não faz nada. Cada venda custa taxas, a diferença entre o preço de compra e o de venda, e às vezes impostos. Vale a pena pagar isso para corrigir um desvio real, não para correr atrás de ruído. Um estudo da Vanguard de 2010 não encontrou uma frequência ideal: revisar uma ou duas vezes por ano, com bandas, basta para a maioria.</p>
-      <p>O mais barato continua sendo não vender. Com 10.000 dólares em 75% ações e 25% títulos, e uma receita de 70/30, um aporte de 1.000 vai 800 para títulos e 200 para ações: ficam 7.700 e 3.300, exatamente 70/30.</p>
-      <p>E saiba quando não rebalancear. A regra pede que você compre o que caiu, e isso faz sentido com um fundo que compra um mercado inteiro. Com uma ação avulsa, pergunte antes se mudou a empresa ou só o preço. Se o negócio quebrou, comprar mais para cumprir uma porcentagem é jogar dinheiro bom atrás do ruim. E a reserva nunca é usada para rebalancear.</p>
-      <p class="lec-try"><b>Experimente:</b> escreva sua receita com uma banda para cada parte (5 pontos ou 25% do peso, o que for menor) e anote para onde vai seu próximo aporte se alguma parte sair da banda.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#portafolio">lição 9, Monte seu portfólio</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <div class="esc-cards">
+    <article class="esc-card" id="rebalancing">
+      <p class="esc-card-meta"><span class="esc-card-n">05</span> 201 · Fontes: Vanguard, "Best practices for portfolio rebalancing" (Jaconetti, Kinniry e Zilbering, 2010); Larry Swedroe (regra 5/25, de seus textos sobre investimento)</p>
+      <h3><a href="escuela/rebalancing-pt.html">Rebalancear com bandas.</a></h3>
+      <p class="esc-card-one">Rebalancear não é uma tarefa de calendário: é uma regra que só age quando algo realmente saiu do lugar.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Simulador de desvio: quatro regras no mesmo mercado</li><li>Calculadora de rebalanceamento com aportes</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/rebalancing-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="dca-vs-lumpsum" data-slug="dca-vs-lumpsum" data-updated="2026-11-15">
-      <p class="lec-meta">201 · Fonte: Vanguard, "Dollar-cost averaging just means taking risk later" (2012)</p>
-      <h3>Tudo de uma vez ou aos poucos?</h3>
-      <p class="lec-one">Com uma quantia grande, investir tudo de uma vez costuma ganhar, mas entrar aos poucos com datas fixas te protege de você mesmo.</p>
-      <p>Primeiro vamos separar duas coisas. Investir uma parte do salário todo mês não é uma decisão: é investir o dinheiro quando você tem. A pergunta de verdade aparece quando você já tem uma quantia grande disponível, como um bônus, uma herança ou anos de poupança juntos. Você coloca hoje ou divide em vários meses?</p>
-      <p>A Vanguard estudou essa pergunta em 2012 com dados dos EUA, do Reino Unido e da Austrália. Comparou investir tudo de uma vez contra dividir em 12 meses, e colocar tudo junto ganhou mais ou menos duas de cada três vezes. O motivo é simples: os mercados sobem em mais anos do que caem, e o dinheiro que espera parado em caixa não está trabalhando.</p>
-      <p>Então entrar aos poucos não serve? Serve para outra coisa. As vezes em que dividir ganha são, principalmente, quando o mercado cai logo depois que você entrou, e essa é a cena que mais dá medo. Se colocar tudo hoje vai te deixar sem dormir e vendendo na primeira queda, um plano aos poucos que você cumpre ganha de um plano perfeito que você abandona.</p>
-      <p>O segredo é que seja um plano e não um "vou esperar cair". Datas fixas, valores fixos e um prazo curto, por exemplo de 3 a 6 meses. Se todo mês você decide de novo, já não está entrando aos poucos: está tentando adivinhar o mercado.</p>
-      <p class="lec-try"><b>Experimente:</b> imagine que hoje chegam 6.000 dólares para você. Escreva num papel o que faria: tudo de uma vez, ou seis compras de 1.000 com as datas exatas. Se escolher aos poucos, deixe as compras programadas hoje mesmo.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#emociones">lição 10, Seu pior inimigo é você</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="dca-vs-lumpsum">
+      <p class="esc-card-meta"><span class="esc-card-n">06</span> 201 · Fontes: Vanguard, "Dollar-cost averaging just means taking risk later" (2012)</p>
+      <h3><a href="escuela/dca-vs-lumpsum-pt.html">Tudo de uma vez ou aos poucos?</a></h3>
+      <p class="esc-card-one">Com uma soma grande, investir tudo de uma vez costuma ganhar, mas entrar aos poucos em datas fixas protege você de si mesmo.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Simulador de 4.000 cenários: tudo de uma vez contra aos poucos</li><li>Três caminhos depois de entrar</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/dca-vs-lumpsum-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="factors" data-slug="factors" data-updated="2026-11-15">
-      <p class="lec-meta">201 · Fonte: pesquisa acadêmica (Fama e French, Jegadeesh e Titman, Novy-Marx e outros)</p>
-      <h3>Os fatores: do que uma ação é feita</h3>
-      <p class="lec-one">Um fator é uma característica que muitas ações compartilham e que explica por que elas se movem juntas.</p>
-      <p>Cada ação tem características: quão barata está, quanto subiu ultimamente, quanto lucra, quão grande é, quanto o preço balança (isso é a volatilidade). Os pesquisadores descobriram que um punhado dessas características explica boa parte de como as ações se movem, e que algumas pagaram um prêmio durante longos períodos.</p>
-      <p><b>Valor</b>: empresas baratas em comparação com o que lucram ou com o que têm. No longo prazo foram melhor, mas nos EUA ficaram para trás durante grande parte de 2007 a 2020. <b>Momentum</b>: o que mais subiu nos últimos meses tende a continuar subindo por um tempo, até virar de repente, como em 2009. <b>Qualidade</b>: empresas lucrativas, estáveis e com pouca dívida. <b>Tamanho</b>: as empresas pequenas renderam mais na história, embora hoje se discuta se esse prêmio ainda está vivo. <b>Baixa volatilidade</b>: ações tranquilas que renderam parecido com as nervosas, com menos sustos.</p>
-      <p>Nenhum fator paga todo ano. Cada um teve longas fases ruins. Se você não aguenta ele no pior momento, vai vender justamente aí.</p>
-      <p>E um fundo de fatores tem o que a regra dele escolheu da última vez. Um fundo de momentum do S&amp;P 500 escolhe as ações de novo duas vezes por ano: se as vencedoras foram quase todas de tecnologia, o fundo fica parecido com um de tecnologia, mesmo que o nome não diga. Até um fundo "de valor" pode acabar com gigantes de tecnologia entre as maiores posições. O nome é a etiqueta. O que você tem é o que está dentro.</p>
-      <p class="lec-try"><b>Experimente:</b> entre na página de um fundo de fator (valor, momentum ou qualidade), anote as 10 maiores posições e o peso por setor, e compare com os de um fundo do S&amp;P 500. Quanto eles se parecem?</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#diversificar">lição 8, Não coloque todos os ovos na mesma cesta</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="factors">
+      <p class="esc-card-meta"><span class="esc-card-n">07</span> 201 · Fontes: Fama e French, Jegadeesh e Titman, Novy-Marx, Daniel e Moskowitz, McLean e Pontiff</p>
+      <h3><a href="escuela/factors-pt.html">Os fatores: do que é feita uma ação.</a></h3>
+      <p class="esc-card-one">Um fator é uma característica que muitas ações compartilham, como estar baratas ou vir subindo, e que explica por que se movem juntas.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Simulador da chance de ficar atrás</li><li>Simulador de sequências ruins</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/factors-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="currency-101" data-slug="currency-101" data-updated="2026-11-15">
-      <p class="lec-meta">201 · Fonte: Irving Fisher (taxa real) e história monetária argentina</p>
-      <h3>A moeda em que você mede</h3>
-      <p class="lec-one">Um rendimento só significa algo se você sabe em que moeda mede e quanto os preços subiram nessa moeda.</p>
-      <p>Um número grande nem sempre é um ganho. Se um CDB ou depósito a prazo em pesos te pagou 100% em um ano, mas os preços subiram 120%, você tem o dobro de pesos e mesmo assim compra menos que antes. O que te pagaram é o rendimento <b>nominal</b>. O que você ganhou em poder de compra é o rendimento <b>real</b>: 2 dividido por 2,2 dá 0,91, ou seja, você perdeu perto de 9%.</p>
-      <p>Com a <b>desvalorização</b>, que é quando a sua moeda perde valor contra outra, acontece o mesmo. Se seus investimentos em pesos subiram 50% mas o dólar passou de 1.000 para 1.600 pesos, em dólares você perdeu um pouco mais de 6%. Na Argentina, depois de dez anos de um peso por dólar, em 2002 o peso chegou a valer menos de um terço de dólar. As mesmas notas, de um ano para o outro.</p>
-      <p>Por isso vale a pena medir numa moeda forte, como o dólar ou o euro, que perde valor bem mais devagar. Mas o dólar também tem inflação: para saber se você ganhou de verdade, desconte também a dos EUA.</p>
-      <p>A regra de fundo é medir na moeda em que você vai gastar. Se vai viver em euros, sua meta é em euros. Se você gasta em pesos mas as coisas grandes, como um carro ou uma casa, são pensadas em dólares, o dólar é a sua régua. O perigo não é ter coisas em outra moeda: é juntar numa e gastar em outra sem ter pensado nisso.</p>
-      <p class="lec-try"><b>Experimente:</b> veja quanto você tinha guardado um ano atrás e quanto tem hoje. Converta os dois números para dólares com o câmbio de cada data e compare. Você cresceu em pesos, em dólares ou em nenhum dos dois?</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#inflacion">lição 1, Por que o dinheiro perde valor?</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="currency-101">
+      <p class="esc-card-meta"><span class="esc-card-n">08</span> 201 · Fontes: Irving Fisher (taxa real) e história monetária argentina</p>
+      <h3><a href="escuela/currency-101-pt.html">Um rendimento sem moeda não diz nada.</a></h3>
+      <p class="esc-card-one">Um rendimento só significa algo se você sabe em que moeda o mede e quanto os preços subiram nessa moeda.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Calculadora de taxa real</li><li>Simulador de poupança em moeda local ou em dólares</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/currency-101-pt.html">Ler a entrada →</a></p>
     </article>
+    </div>
   </div>
 </section>
 
 <section class="sec alt" id="n301">
-  <div class="wrap">
+  <div class="wrap wide">
     <p class="kicker">Nível 301</p>
     <h2 class="big">Analisar empresas sem se enganar.</h2>
-    <article class="lec" id="valuation-101" data-slug="valuation-101" data-updated="2026-11-15">
-      <p class="lec-meta">301 · Fonte: Aswath Damodaran, com duas armadilhas do P/L apontadas por David Galán</p>
-      <h3>Avaliar é contar uma história com números</h3>
-      <p class="lec-one">Uma boa avaliação junta uma história sobre a empresa com números que a tornam possível, e até o número mais famoso pode te enganar.</p>
-      <p>Aswath Damodaran diz que uma história sem números é um conto de fadas, e números sem história são uma planilha vazia. Primeiro você conta o que é a empresa e no que ela vai se transformar. Depois se pergunta quanto teriam que ser as vendas, as margens e os lucros para essa história ser verdade, e se isso é crível.</p>
-      <p>O atalho mais usado é o <strong>P/L</strong> (preço sobre lucro, em inglês P/E): ele diz quantos anos de lucro de hoje você paga ao comprar a ação. Primeira armadilha: o P/L dos últimos doze meses pode estar inflado por lucros que não se repetem. A Amazon, em novembro de 2026, era negociada a 21,4 vezes os lucros passados, mas a 25,7 vezes os esperados. O lucro tinha saltado 74% em relação a todo o ano de 2025, em boa parte porque subiu o valor da participação dela na Anthropic, não porque o negócio lucrou mais. Tirando esse ganho, uma estimativa aproximada leva o P/L passado para mais de 30 vezes. A pista: se o P/L futuro é mais alto que o passado, o mercado espera que o lucro caia.</p>
-      <p>Segunda armadilha: barato em relação à própria história não é barato em relação aos juros. Se o mercado é negociado a 17,8 vezes, cada dólar investido te dá 1 dividido por 17,8, ou seja, 5,6% em lucros. O título do Tesouro dos Estados Unidos de 10 anos pagava 5,1%. A diferença é de meio ponto, quando antes, com múltiplos parecidos, era de 2,5 a 3 pontos. Mesmo número, muito menos prêmio pelo risco de ter ações.</p>
-      <p class="lec-try"><b>Experimente:</b> escolha uma empresa que você conhece e procure num site de cotações o P/L passado (trailing) e o P/L futuro (forward). Calcule 1 dividido pelo P/L e compare com a taxa do título de 10 anos. Qual é mais alto?</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#acciones">lição 5, O que é uma ação?</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <div class="esc-cards">
+    <article class="esc-card" id="valuation-101">
+      <p class="esc-card-meta"><span class="esc-card-n">09</span> 301 · Fontes: Aswath Damodaran, com duas armadilhas do P/L apontadas por David Galán</p>
+      <h3><a href="escuela/valuation-101-pt.html">Avaliar é contar uma história com números.</a></h3>
+      <p class="esc-card-one">Uma boa avaliação junta um relato sobre a empresa com números que o tornam possível, e até o número mais famoso pode enganar você.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Fluxo de caixa descontado de brinquedo</li><li>Avaliação ao contrário</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/valuation-101-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="big-market-delusion" data-slug="big-market-delusion" data-updated="2026-11-15">
-      <p class="lec-meta">301 · Fonte: Aswath Damodaran, Steve Eisman e Howard Marks</p>
-      <h3>O mercado enorme que engana</h3>
-      <p class="lec-one">Um mercado ser gigante não quer dizer que as empresas que brigam por ele vão ganhar dinheiro.</p>
-      <p>Damodaran descreve a armadilha assim: aparece um mercado enorme (em inglês se chama TAM, o tamanho total do negócio possível) e cada empresa supõe que vai ficar com uma grande parte. Todas investem como se fossem ganhar. Não dá para todas ganharem. Entra mais dinheiro do que o negócio consegue devolver, chegam as guerras de preço e as margens encolhem. "O maior mercado que já vi na vida" é um alarme, não um motivo para comprar.</p>
-      <p>Também importa como a festa é paga. A bolha das pontocom foi financiada principalmente com ações, então a queda apagou riqueza na bolsa e parou por aí. A construção de data centers para inteligência artificial está sendo paga em boa parte com dívida. Se der errado, não são só as ações que caem: empréstimos podem quebrar e o golpe chega ao crédito e à economia real.</p>
-      <p>Steve Eisman aponta três esconderijos do risco. Clientes concentrados: vendas que parecem distribuídas mas dependem de pouquíssimos compradores. Veículos fora do balanço: dívidas montadas em empresas separadas para a empresa parecer menos endividada. Ganhos por avaliação: se uma empresa tem ações de um cliente e esse cliente se valoriza, o ganho aparece no resultado dela mesmo sem ter vendido nada. Howard Marks citou dados da FactSet: Alphabet e Amazon somaram uns 151 bilhões de dólares de ganhos com investimentos no segundo trimestre de 2026.</p>
-      <p class="lec-try"><b>Experimente:</b> pegue uma empresa que fala muito do seu "mercado enorme" e procure no último relatório três coisas: que parte das vendas vem dos maiores clientes, quanta dívida e quantos aluguéis de longo prazo ela tem, e se parte do lucro veio de investimentos em vez do negócio.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#acciones">lição 5, O que é uma ação?</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="big-market-delusion">
+      <p class="esc-card-meta"><span class="esc-card-n">10</span> 301 · Fontes: Aswath Damodaran, Steve Eisman e Howard Marks</p>
+      <h3><a href="escuela/big-market-delusion-pt.html">O mercado enorme que engana.</a></h3>
+      <p class="esc-card-one">Um mercado ser gigante não quer dizer que as empresas que brigam por ele vão ganhar dinheiro.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Funil de valor de um mercado</li><li>Quantas empresas podem ganhar a mesma fatia</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/big-market-delusion-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="low-risk-vs-high-uncertainty" data-slug="low-risk-vs-high-uncertainty" data-updated="2026-11-15">
-      <p class="lec-meta">301 · Fonte: Mohnish Pabrai e Howard Marks</p>
-      <h3>Pouco risco não é o mesmo que pouca incerteza</h3>
-      <p class="lec-one">Não conseguir adivinhar o lucro do ano que vem não significa que você possa perder seu dinheiro para sempre.</p>
-      <p>Incerteza é não saber quanto a empresa vai lucrar no próximo trimestre. Risco é a chance de perder seu capital para sempre. Mohnish Pabrai diz que o mercado mistura as duas coisas. Paga demais por empresas com lucros certinhos e paga de menos por empresas com lucros aos saltos, mesmo que tenham muito caixa, nenhuma dívida e uma vantagem duradoura. Como muitos gestores são avaliados trimestre a trimestre e não aguentam esses saltos, o desconto dura.</p>
-      <p>Um exemplo que Pabrai conta: um fabricante de tubos de aço, comprado a uns 40 a 42 dólares por ação quando tinha uns 15 dólares por ação em dinheiro e zero dívida. Os lucros eram impossíveis de prever, mas perder tudo era muito improvável. Acabou comprado por outra empresa a 160 dólares por ação.</p>
-      <p>A ideia quebra se a empresa gasta a reserva numa compra ruim, em recompras com dívida ou em investimentos gigantes. Por isso o balanço é acompanhado sempre, não só na hora de comprar. Howard Marks acrescenta um teste: você consegue estimar o <strong>lucro por ação</strong> (o lucro total dividido pela quantidade de ações) daqui a cinco anos com uma margem de 50% para cima ou para baixo? Se você estima 10 dólares, o resultado real teria que cair entre 5 e 15. Se consegue, a incerteza tem limites. Se não, você está comprando uma história.</p>
-      <p class="lec-try"><b>Experimente:</b> escolha uma empresa, procure o lucro por ação dos últimos cinco anos e o caixa e a dívida atuais. Anote sua estimativa para daqui a cinco anos e se pergunte se apostaria que ela fica entre a metade e uma vez e meia do seu número.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#interes-compuesto">lição 4, A mágica dos juros compostos</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="low-risk-vs-high-uncertainty">
+      <p class="esc-card-meta"><span class="esc-card-n">11</span> 301 · Fontes: Mohnish Pabrai e Howard Marks</p>
+      <h3><a href="escuela/low-risk-vs-high-uncertainty-pt.html">Risco baixo não é o mesmo que incerteza baixa.</a></h3>
+      <p class="esc-card-one">Não conseguir adivinhar o lucro do ano que vem não significa que você possa perder seu dinheiro para sempre.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Duas empresas com o mesmo valor esperado</li><li>Faixa de Marks de ±50%</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/low-risk-vs-high-uncertainty-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="thesis-creep" data-slug="thesis-creep" data-updated="2026-11-15">
-      <p class="lec-meta">301 · Fonte: Steve Eisman</p>
-      <h3>Mais barato nem sempre é mais seguro</h3>
-      <p class="lec-one">Se o motivo pelo qual você comprou deixou de se cumprir, a ação estar mais barata não te protege.</p>
-      <p>A <strong>margem de segurança</strong> é comprar bem abaixo do que algo vale, para ter folga se você errar. Steve Eisman conta um erro dele: manteve ações do Citigroup muito depois de a ideia central, que a rentabilidade do banco voltaria ao nível dos concorrentes, já ter falhado à vista de todos. Cada queda parecia uma oportunidade. Na verdade o mercado estava colocando o preço certo num negócio quebrado.</p>
-      <p>Uma tese são poucas coisas concretas que precisam ser verdade para o investimento funcionar. Eisman chama o erro de thesis creep, a tese que vai escorregando sem você perceber. Acontece quando o preço vira o argumento: "caiu 40%, tem que valer mais que isso".</p>
-      <p>O remédio dele é mecânico. Escreva antes os fatos de que sua tese precisa, e se eles pararem de aparecer, a tese quebrou, faça o preço o que fizer. Só funciona se você escrever fatos que possam falhar, como "as vendas do produto novo crescem menos que tal número por dois trimestres seguidos". Uma frase como "boa empresa, uma hora volta" nunca falha, e é aí que o problema se esconde. Atenção: às vezes uma grande empresa passa por um momento ruim passageiro que, de fora, parece igual a uma tese quebrada. Distinguir as duas coisas é o verdadeiro trabalho.</p>
-      <p class="lec-try"><b>Experimente:</b> para uma empresa que você tem ou de que gosta, escreva num papel três fatos sobre o negócio, não sobre o preço, que te fariam mudar de opinião. Cada um com um número e um prazo. Guarde e releia quando sair o próximo relatório trimestral.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#emociones">lição 10, Seu pior inimigo é você</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="thesis-creep">
+      <p class="esc-card-meta"><span class="esc-card-n">12</span> 301 · Fonte: Steve Eisman</p>
+      <h3><a href="escuela/thesis-creep-pt.html">Mais barato nem sempre é mais seguro.</a></h3>
+      <p class="esc-card-one">Quando o preço vira o argumento ("caiu 40%, tem que valer mais"), a tese já escorregou sem você perceber.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Simulador do Banco Modelo: regra de preço contra regra de tese</li><li>Jogo: essa frase pode falhar?</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/thesis-creep-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="familiarity-bias" data-slug="familiarity-bias" data-updated="2026-11-15">
-      <p class="lec-meta">301 · Fonte: Charlie Bilello, com o contraponto de Mohnish Pabrai</p>
-      <h3>Conhecer uma empresa não é ter vantagem</h3>
-      <p class="lec-one">Saber muito sobre uma empresa não te diz se o preço dela já reflete tudo o que você sabe.</p>
-      <p>A gente tende a investir no que conhece: a empresa onde trabalha, as marcas que usa. Esse conforto parece convicção. Charlie Bilello mostra o risco com a Nike, uma marca que meio mundo conhece: em cinco anos ela chegou a cair mais de 70% enquanto o S&amp;P 500 subia. E, segundo os dados dele, das dez maiores empresas dos Estados Unidos em 1990 nenhuma continua hoje entre as dez primeiras, e da lista do ano 2000 só a Microsoft sobreviveu.</p>
-      <p>Mas concentrar nem sempre é ruim. Investidores como Mohnish Pabrai apostam pesado de propósito quando sabem algo que o mercado ainda não colocou no preço. O que separa uma coisa da outra são três perguntas. Você sabe algo que o mercado não sabe, e mantém isso atualizado? Sua regra de saída fala do negócio ou só de um preço? Seu salário depende da mesma empresa? Se você trabalha lá e ainda tem muito investido, um ano ruim te atinge duas vezes, no trabalho e nas economias.</p>
-      <p>Concentração informada é apostar pesado com uma tese escrita, fatos que a refutariam e um tamanho decidido de antemão. Viés de familiaridade é apostar pesado porque você gosta da marca. Conhecer o produto não é evidência. Ter informação, sim.</p>
-      <p class="lec-try"><b>Experimente:</b> faça uma lista das empresas que você tem ou gostaria de ter e anote ao lado o porquê. Se o motivo for "eu uso" ou "eu conheço", escreva o que você sabe que o mercado não sabe. Se não encontrar nada, você já aprendeu alguma coisa.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#diversificar">lição 8, Não coloque todos os ovos na mesma cesta</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="familiarity-bias">
+      <p class="esc-card-meta"><span class="esc-card-n">13</span> 301 · Fontes: Charlie Bilello, com o contraponto de Mohnish Pabrai</p>
+      <h3><a href="escuela/familiarity-bias-pt.html">Conhecer uma empresa não é ter vantagem.</a></h3>
+      <p class="esc-card-one">O conforto do conhecido parece convicção, mas conhecer o produto não é ter informação que o mercado não tem.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Calculadora do golpe duplo: sua empresa nas suas economias e no seu salário</li><li>As três perguntas</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/familiarity-bias-pt.html">Ler a entrada →</a></p>
     </article>
+    </div>
   </div>
 </section>
 
 <section class="sec" id="n401">
-  <div class="wrap">
+  <div class="wrap wide">
     <p class="kicker">Nível 401</p>
     <h2 class="big">As grandes decisões.</h2>
-    <article class="lec" id="reversibility" data-slug="reversibility" data-updated="2026-11-15">
-      <p class="lec-meta">401 · Fonte: Nassim Nicholas Taleb, Jeff Bezos</p>
-      <h3>Dá para desfazer?</h3>
-      <p class="lec-one">Um erro que tem conserto te custa dinheiro. Um que não tem volta pode te tirar do jogo.</p>
-      <p>Nem todos os erros pesam igual. Se você compra uma ação e erra, vende, perde um pouco e segue. Dói, mas seu dinheiro continua lá, menor, e pode voltar a crescer. Outros erros não têm conserto: colocar todas as suas economias num negócio que fecha, assinar como fiador de uma dívida que depois você não consegue pagar, emprestar a um parente um dinheiro que não volta e que ainda por cima te custa a relação.</p>
-      <p>Nassim Taleb insiste numa ideia simples: o primeiro é não ficar fora do jogo. Se você perde tudo, não existe ganho futuro que te salve, porque você já não tem com o que continuar. Jeff Bezos, na carta aos acionistas da Amazon de 2015, explica isso com portas. Algumas decisões são portas de ida e volta: se você não gosta do que tem do outro lado, volta. Outras são portas de mão única.</p>
-      <p>A regra é tratar cada uma de um jeito. Com as de ida e volta, vá em frente, teste e erre barato. Com as de mão única, vá devagar mesmo que a oportunidade pareça ótima. Antes de algo grande, como comprar uma casa com um financiamento de 20 anos, a primeira pergunta não é quanto você pode ganhar. É se dá para desfazer.</p>
-      <p class="lec-try"><b>Experimente:</b> anote as três maiores decisões de dinheiro que você tem pela frente neste ano. Ao lado de cada uma escreva "ida e volta" ou "mão única". Para as de mão única, escreva o que aconteceria no pior caso e se existe um jeito de testar antes em pequeno, como alugar num bairro antes de comprar lá.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#emociones">lição 10, Seu pior inimigo é você</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <div class="esc-cards">
+    <article class="esc-card" id="reversibility">
+      <p class="esc-card-meta"><span class="esc-card-n">14</span> 401 · Fontes: Nassim Nicholas Taleb, Jeff Bezos</p>
+      <h3><a href="escuela/reversibility-pt.html">Dá para desfazer?</a></h3>
+      <p class="esc-card-one">Existem decisões de ida e volta e decisões de mão única, e tratá-las igual é o erro mais caro das pessoas inteligentes.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Classificador de portas: ida e volta ou mão única</li><li>Calculadora do custo de desfazer: comprar ou alugar</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/reversibility-pt.html">Ler a entrada →</a></p>
     </article>
-
-    <article class="lec" id="debiasing-by-structure" data-slug="debiasing-by-structure" data-updated="2026-11-15">
-      <p class="lec-meta">401 · Fonte: Emily Haisley (BlackRock), Gary Klein</p>
-      <h3>Regras, não força de vontade</h3>
-      <p class="lec-one">Seus vieses não somem por você saber que existem. Eles são freados com regras escritas e com alguém que te revise.</p>
-      <p>Saber que o medo, a ambição ou o orgulho podem jogar contra você não te deixa imune. Emily Haisley, pesquisadora de finanças comportamentais da BlackRock, coloca assim: os vieses não são falta de informação, eles vêm de fábrica. Por isso, em vez de prometer ser mais racional, vale a pena montar o ambiente para que o viés tenha menos espaço.</p>
-      <p>Três ferramentas simples. Primeiro, uma lista de checagem que você preenche antes de qualquer compra ou venda importante: por que estou fazendo isso? O que teria que acontecer para eu perceber que errei? Estou tranquilo ou decidindo com raiva, medo ou pressa? Segundo, um advogado do diabo: alguém de confiança que não ganhe nada com a sua decisão e cujo trabalho seja achar o furo nela. Que ele dê a opinião antes de ouvir a sua, para não se ajustar ao que você pensa. Terceiro, o pré-mortem, uma ideia do psicólogo Gary Klein: imagine que passou um ano, que a decisão deu horrivelmente errado, e escreva por quê.</p>
-      <p>Um sinal para o final: se você se pegar procurando alguém que te diga sim, provavelmente já sabe a resposta.</p>
-      <p class="lec-try"><b>Experimente:</b> escreva sua lista de checagem com cinco perguntas e guarde no celular, ao lado do app em que você investe. Depois escolha seu advogado do diabo e peça que, da próxima vez, ele te faça essas perguntas em voz alta antes de você confirmar.</p>
-      <p class="base">Se faltar a base: <a href="lecciones.html?lang=pt#emociones">lição 10, Seu pior inimigo é você</a>.</p>
-      <p class="lec-date">Atualizada em 15 de novembro de 2026.</p>
+    <article class="esc-card" id="debiasing-by-structure">
+      <p class="esc-card-meta"><span class="esc-card-n">15</span> 401 · Fontes: Emily Haisley (BlackRock), Gary Klein</p>
+      <h3><a href="escuela/debiasing-by-structure-pt.html">Regras, não força de vontade.</a></h3>
+      <p class="esc-card-one">Saber que o medo te faz vender não te deixa imune: o que funciona é montar o ambiente para que o viés tenha menos espaço.</p>
+      <ul class="esc-tools" aria-label="Ferramentas desta entrada"><li>Simulador de três reflexos diante de uma queda</li><li>Montador de pré-mortem e lista de checagem</li></ul>
+      <p class="esc-card-go"><a class="esc-go" href="escuela/debiasing-by-structure-pt.html">Ler a entrada →</a></p>
     </article>
+    </div>
   </div>
 </section>
 
 <section class="end">
   <div class="wrap wide">
-    <h2>Saber mais não é operar mais. <em>É errar menos.</em></h2>
+    <h2>Escolha uma e <em>vá com calma.</em></h2>
     <div class="end-links">
-      <a href="lecciones.html?lang=pt">As doze lições →</a>
-      <a class="ghost" href="empezar-pt.html">O guia Começar →</a>
+      <a href="escuelas-pt.html">Escolas de pensamento →</a>
+      <a class="ghost" href="contenidos-pt.html">Todo o conteúdo →</a>
     </div>
   </div>
 </section>
+
 <!-- sitemap:start -->
-<nav class="sitemap" aria-label="Mapa do site"><div class="sm-wrap"><p class="sm-brand">Investir do zero</p><div class="sm-cols"><div class="sm-col"><h2>Comece</h2><ul><li><a href="index-pt.html">Início</a></li><li><a href="empezar-pt.html">O guia Comece aqui</a></li><li><a href="lecciones.html?lang=pt">As doze lições</a></li><li><a href="contenidos-pt.html#herramientas">Calculadoras</a></li><li><a href="contenidos-pt.html">Todo o conteúdo</a></li></ul></div><div class="sm-col"><h2>A Escola</h2><ul><li><a href="academia-pt.html">As quinze leituras</a></li><li><a href="academia-pt.html#n101">101 · Fundamentos</a></li><li><a href="academia-pt.html#n201">201 · Montar um portfólio</a></li><li><a href="academia-pt.html#n301">301 · Analisar sem se enganar</a></li><li><a href="academia-pt.html#n401">401 · Grandes decisões</a></li></ul></div><div class="sm-col"><h2>Escolas de pensamento</h2><ul><li><a href="escuelas-pt.html#indice">Índice</a></li><li><a href="escuelas-pt.html#valor">Valor</a></li><li><a href="escuelas-pt.html#ciclos">Ciclos</a></li><li><a href="escuelas-pt.html#antifragil">Antifrágil</a></li><li><a href="escuelas-pt.html#concentracion">Concentração</a></li><li><a href="escuelas-pt.html#tendencia">Tendência</a></li><li><a href="escuelas-pt.html#comparar">Compará-las</a></li></ul></div><div class="sm-col"><h2>Seções</h2><ul><li><a href="futbolistas-pt.html">Esportes</a></li><li><a href="creadores-pt.html">Vida digital</a></li><li><a href="de-golpe-pt.html">Finanças pessoais</a></li><li><a href="la-casa-pt.html">Para os mais novos</a></li></ul></div></div></div></nav>
+<nav class="sitemap" aria-label="Mapa do site"><div class="sm-wrap"><p class="sm-brand">Investir do zero</p><div class="sm-cols"><div class="sm-col"><h2>Comece</h2><ul><li><a href="index-pt.html">Início</a></li><li><a href="empezar-pt.html">O guia Comece aqui</a></li><li><a href="lecciones.html?lang=pt">As doze lições</a></li><li><a href="contenidos-pt.html#herramientas">Calculadoras</a></li><li><a href="contenidos-pt.html">Todo o conteúdo</a></li></ul></div><div class="sm-col"><h2>A Escola</h2><ul><li><a href="academia-pt.html">As quinze entradas</a></li><li><a href="academia-pt.html#n101">101 · Fundamentos</a></li><li><a href="academia-pt.html#n201">201 · Montar um portfólio</a></li><li><a href="academia-pt.html#n301">301 · Analisar sem se enganar</a></li><li><a href="academia-pt.html#n401">401 · Grandes decisões</a></li></ul></div><div class="sm-col"><h2>Escolas de pensamento</h2><ul><li><a href="escuelas-pt.html#indice">Índice</a></li><li><a href="escuelas-pt.html#valor">Valor</a></li><li><a href="escuelas-pt.html#ciclos">Ciclos</a></li><li><a href="escuelas-pt.html#antifragil">Antifrágil</a></li><li><a href="escuelas-pt.html#concentracion">Concentração</a></li><li><a href="escuelas-pt.html#tendencia">Tendência</a></li><li><a href="escuelas-pt.html#comparar">Compará-las</a></li></ul></div><div class="sm-col"><h2>Seções</h2><ul><li><a href="futbolistas-pt.html">Esportes</a></li><li><a href="creadores-pt.html">Vida digital</a></li><li><a href="de-golpe-pt.html">Finanças pessoais</a></li><li><a href="la-casa-pt.html">Para os mais novos</a></li></ul></div></div></div></nav>
 <!-- sitemap:end -->
 <footer class="foot">
-  <p>Educação financeira, não aconselhamento personalizado. As empresas são mencionadas como exemplos do mercado público, não como recomendação. As leituras são revisadas quando muda a pesquisa em que se baseiam. A data de cada uma está no pé da leitura.</p>
+  <p>Educação financeira, não aconselhamento personalizado. Nada do que é publicado aqui é recomendação pessoal de investimento. O seu progresso fica só no seu navegador.</p>
 </footer>
-
-<script src="vp.js"></script>
 </body>
 </html>

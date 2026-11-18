@@ -10,7 +10,7 @@
 .ix-search { flex: 1 1 260px; display: flex; flex-direction: column; }
 .ix-search[hidden] { display: none; }
 .ix-search label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.ix-search input { width: 100%; padding: 11px 14px; font: 400 16px/1.2 var(--sans); color: var(--ink); background: #fff; border: 1.5px solid var(--ink); border-radius: 10px; }
+.ix-search input { width: 100%; padding: 11px 14px; font: 400 16px/1.2 var(--sans); color: var(--ink); background: var(--ny-white, #fff); border: 1.5px solid var(--ink); border-radius: 10px; }
 .ix-none { margin: 28px auto 0; font: 500 16px/1.4 var(--mono); color: var(--muted); }
 .ix-none[hidden] { display: none; }
 
@@ -40,7 +40,7 @@
 .ix-m { font: 500 12.5px/1.4 var(--mono); color: var(--muted); white-space: nowrap; }
 .ix-cta { margin: 16px 0 0; font-size: 17px; }
 .ix-endp { margin: 0 0 24px; max-width: 52ch; font-size: 19px; color: var(--muted-dark); }
-.ix-share { padding: 16px 20px; font: 650 16px/1.2 var(--sans); cursor: pointer; color: var(--ink); background: var(--champagne); border: 0; border-radius: 14px; }
+.ix-share { padding: 16px 20px; font: 650 16px/1.2 var(--sans); cursor: pointer; color: var(--ny-on-neon, var(--ink)); background: var(--ny-neon, var(--champagne)); border: 2px solid #fff; border-radius: 0; }
 .ix-share[hidden] { display: none; }
 
 @media (max-width: 640px) {

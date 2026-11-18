@@ -30,9 +30,12 @@
     meta('theme-color', mode === 'night' ? '#0b0a0f' : '#7b2cbf');
     paint();
   }
-  apply(saved() || (mq && mq.matches ? 'night' : 'day'));
+  // Test-only switch: ?theme=night or ?theme=day shows that mode without saving it (screenshots, contrast checks).
+  var forced = null;
+  try { var q = new URLSearchParams(window.location.search).get('theme'); if (q === 'day' || q === 'night') forced = q; } catch (e) { forced = null; }
+  apply(forced || saved() || (mq && mq.matches ? 'night' : 'day'));
   if (mq && mq.addEventListener) {
-    mq.addEventListener('change', function (e) { if (!saved()) apply(e.matches ? 'night' : 'day'); });
+    mq.addEventListener('change', function (e) { if (!saved() && !forced) apply(e.matches ? 'night' : 'day'); });
   }
   document.addEventListener('click', function (e) {
     var b = e.target && e.target.closest ? e.target.closest('.theme-btn') : null;
