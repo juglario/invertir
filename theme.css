@@ -38,6 +38,17 @@
   --ny-label: "Avenir Next Condensed", "HelveticaNeue-CondensedBold", "Helvetica Neue", "Arial Narrow", "Roboto Condensed", system-ui, sans-serif;
   --ny-accent-on-black: #b78cff;
   --ny-tape: repeating-linear-gradient(-45deg, #f6c445 0 12px, #111014 12px 24px);
+  /* header field */
+  --hd-base: linear-gradient(135deg, #7b2cbf 0%, #4b1a8c 52%, #170a2e 100%);
+  --hd-glow-a: radial-gradient(760px 380px at 88% -8%, rgba(255, 255, 255, 0.2), transparent 62%);
+  --hd-glow-b: radial-gradient(620px 340px at 4% 112%, rgba(246, 196, 69, 0.12), transparent 62%);
+  --hd-scan: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3px);
+  --hd-line: rgba(255, 255, 255, 0.34);
+  --hd-grid: rgba(255, 255, 255, 0.24);
+  --hd-bracket: linear-gradient(var(--hd-line), var(--hd-line)) left 18px bottom 18px / 28px 2px no-repeat,
+                linear-gradient(var(--hd-line), var(--hd-line)) left 18px bottom 18px / 2px 28px no-repeat,
+                linear-gradient(var(--hd-line), var(--hd-line)) right 18px bottom 18px / 28px 2px no-repeat,
+                linear-gradient(var(--hd-line), var(--hd-line)) right 18px bottom 18px / 2px 28px no-repeat;
 }
 html[data-theme="night"] {
   color-scheme: dark;
@@ -60,6 +71,11 @@ html[data-theme="night"] {
   --ny-green: #5fd39a;
   --ny-bad: #ff6b5e;
   --ny-select: rgba(194, 155, 255, 0.35);
+  --hd-base: linear-gradient(135deg, #1a0f33 0%, #0f0d14 55%, #000 100%);
+  --hd-glow-a: radial-gradient(760px 380px at 88% -8%, rgba(150, 90, 255, 0.34), transparent 62%);
+  --hd-glow-b: radial-gradient(620px 340px at 4% 112%, rgba(246, 196, 69, 0.1), transparent 62%);
+  --hd-line: rgba(194, 155, 255, 0.5);
+  --hd-grid: rgba(150, 100, 255, 0.34);
 }
 
 html { background: var(--ny-paper); }
@@ -68,14 +84,11 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 /* Lining figures everywhere: old-style numerals make 10 read like IO. */
 .t-portada *, .t-lessons *, .t-vp *, .t-casa * { font-variant-numeric: lining-nums !important; font-feature-settings: "lnum" 1 !important; }
 
-/* ================= headers: violet band (black at night), halftone dots, yellow tape, line drawing ================= */
+/* ================= headers: dark violet field, perspective grid, HUD corners, line drawing (futuristic block at the end of the file) ================= */
 .pg-portada .head, .t-vp .hero, .t-lessons .hero {
   position: relative; isolation: isolate; overflow: hidden;
-  background-color: var(--ny-band);
-  background-image: radial-gradient(circle, var(--ny-dots) 1.3px, transparent 1.8px);
-  background-size: 10px 10px;
+  background: var(--hd-bracket), var(--hd-scan), var(--hd-glow-a), var(--hd-glow-b), var(--hd-base);
   color: var(--ny-band-ink);
-  border-bottom: 12px solid transparent; border-image: var(--ny-tape) 12;
 }
 .pg-portada .head::before, .t-vp .hero::before, .t-lessons .hero::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
@@ -246,3 +259,50 @@ html:not([data-theme]) .theme-btn { display: none; }
 .t-casa .day .btn { border-radius: 0; }
 
 @media (prefers-reduced-motion: reduce) { .t-vp .front, .t-vp .back { transition: none; } .t-vp .end-links a:hover { transform: none; } }
+
+
+/* ================= futuristic headers ================= */
+/* A flat HUD grid rising from the bottom edge, drifting slowly, behind the drawing.
+   (A 3D perspective floor was tried; some renderers drop 3D transforms, so it stays flat.) */
+.pg-portada .head::after, .t-vp .hero::after, .t-lessons .hero::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 72%; z-index: -2; pointer-events: none;
+  background:
+    linear-gradient(var(--hd-grid) 1px, transparent 1px) 0 0 / 100% 40px,
+    linear-gradient(90deg, var(--hd-grid) 1px, transparent 1px) 0 0 / 56px 100%;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 100%); mask-image: linear-gradient(to top, #000 0%, transparent 100%);
+  opacity: 0.7; animation: hd-drift 9s linear infinite;
+}
+@keyframes hd-drift { to { background-position: 0 40px, 0 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .pg-portada .head::after, .t-vp .hero::after, .t-lessons .hero::after { animation: none; }
+}
+/* Headline in a heavy geometric sans, with a soft glow. */
+.t-vp .hero h1, .t-lessons .hero-title, .pg-portada .brand {
+  font-family: var(--ny-sans); font-weight: 800; letter-spacing: -0.035em; line-height: 1;
+  text-shadow: 0 0 34px rgba(190, 140, 255, 0.45);
+}
+.t-vp .hero h1 { font-size: clamp(38px, 6.4vw, 86px); }
+.t-lessons .hero-title { font-size: clamp(38px, 6.4vw, 92px); }
+.pg-portada .brand { font-size: clamp(34px, 5.2vw, 60px); }
+.t-vp .hero h1 em, .t-lessons .hero-title em { font-family: var(--ny-sans); font-style: italic; font-weight: 800; text-shadow: none; }
+.t-vp .hero .sub, .pg-portada .tagline { font-family: var(--ny-sans); font-style: normal; font-weight: 400; letter-spacing: 0.005em; }
+/* The little status square before every header label. */
+.t-vp .hero .tag::before, .t-lessons .hero .kicker::before {
+  content: ""; display: inline-block; width: 8px; height: 8px; margin: 0 10px 1px 0; background: var(--ny-neon); box-shadow: 0 0 10px var(--ny-neon);
+}
+
+/* ================= site map footer ================= */
+.sitemap { background: var(--ny-black); color: #fff; padding: 64px 24px 12px; }
+.sm-wrap { max-width: 1080px; margin: 0 auto; }
+.sm-brand { margin: 0 0 28px; font: 800 22px/1.1 var(--ny-sans); letter-spacing: -0.02em; }
+.sm-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 34px 28px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
+.sm-col h2 { margin: 0 0 14px; font: 600 12px/1.2 ui-monospace, Menlo, monospace; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ny-neon); }
+.sm-col ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.sm-col a { color: #e9e4f5; font: 400 15.5px/1.35 var(--ny-sans); text-decoration: none; }
+.sm-col a:hover, .sm-col a:focus-visible { color: var(--ny-neon); text-decoration: underline; text-underline-offset: 3px; }
+/* lecciones.html changes language in the browser: show only the block for <html lang>. */
+.sitemap.multi .sm-wrap { display: none; }
+html:lang(es) .sitemap.multi .sm-wrap[lang="es"], html:lang(en) .sitemap.multi .sm-wrap[lang="en"], html:lang(pt) .sitemap.multi .sm-wrap[lang="pt-BR"] { display: block; }
+.t-lessons .footer, .t-casa .foot { background: var(--ny-black); color: #d9d4e4; border-top: 0; }
+.t-lessons .footer p, .t-casa .foot p { color: #d9d4e4; }
+@media (min-width: 1200px) { .t-lessons .sitemap { padding-left: calc(var(--rail-w, 0px) + 56px); } }
