@@ -152,3 +152,4 @@ html[data-theme="night"] {
 @media (max-width: 640px) { .viz-grid-2 { grid-template-columns: 1fr; } .viz-card { padding: 16px; } }
 @media (prefers-reduced-motion: reduce) { .esc-pn a:hover, .viz-btn:hover, .viz-btn:active { transform: none; } }
 @media print { .esc-toc, .esc-pn { display: none; } }
+.viz-q { margin: 4px 0 14px; max-width: 40ch; font: 700 21px/1.35 var(--ny-display); color: var(--ny-ink); }
